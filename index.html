@@ -16,116 +16,161 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="logo">Movexa</h1>
+        <h1 class="header__logo">Movexa</h1>
     </header>
     <section class="vehicle-registration">
-        <div class=" vehicle-registration__title--button">
-            <h2>Vehicle Registration</h2>
-            <button class="button__new-car">New Car</button>
+        <div class="vehicle-registration__top-wrapper">
+            <h2 class="vehicle-registration__text">Vehicle Registration</h2>
+            <button class="vehicle-registration__button--new-car">New Car</button>
         </div>
-        
-        <div class="block-card">
-            <div class="vehicle-card">
-                <div class="vehicle-card__main" >
-                    <h2>Bmw M5</h2>
-                    <img class="vehicle-card__img" src="bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
-                    <h2>$160.000</h2>
+
+<div class="modal" id="modal">
+  <div class="modal__content">
+    <span class="modal__close" id="closeModalBtn">&times;</span>
+        <h2 class="modal__title">New Vehicle Registration</h2>
+
+    <form class="modal__form" id="vehicleForm">
+      <div class="modal__form-group">
+        <label class="modal__label" for="name">Car Name</label>
+        <input class="modal__input" type="text" id="name" name="name" required>
+      </div>
+
+      <div class="modal__form-group">
+        <label class="modal__label" for="price">Price</label>
+        <input class="modal__input" type="text" id="price" name="price" required>
+      </div>
+
+      <div class="modal__form-group">
+        <label class="modal__label" for="year">Year</label>
+        <input class="modal__input" type="number" id="year" name="year" required>
+      </div>
+
+      <div class="modal__form-group">
+        <label class="modal__label" for="km">Km</label>
+        <input class="modal__input" type="text" id="km" name="km" required>
+      </div>
+
+      <div class="modal__form-group">
+        <label class="modal__label" for="condition">Condition</label>
+        <select class="modal__input" id="condition" name="condition">
+          <option value="New">Novo</option>
+          <option value="Used">Usado</option>
+        </select>
+      </div>
+
+      <div class="modal__form-group">
+        <label class="modal__label" for="img">Imagem (URL)</label>
+        <input class="modal__input" type="text" id="img" name="img">
+      </div>
+
+      <button onclick="salvar()" class="modal__submit" type="submit">Salvar</button>
+    </form>
+  </div>
+</div>
+
+        <div class="vehicle-registration__block-card">
+            <div class="vehicle-registration__vehicle-card">
+                <div class="vehicle-card__main-information" >
+                    <h2 class="vehicle-card__name">Bmw M5</h2>
+                    <img class="vehicle-card__img" src="./folder img/bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
+                    <h2 class="vehicle-card__price">$160.000</h2>
                 </div>
 
                 <div class="vehicle-card__details">
-                    <p>Condition: New</p>
-                    <p>Year: 2025</p>
-                    <p>Km: 0000</p>
+                    <p class="vehicle-card__condition">Condition: New</p>
+                    <p class="vehicle-card__year">Year: 2025</p>
+                    <p class="vehicle-card__km">Km: 0000</p>
                 </div>
-
             </div>
-            <div class="vehicle-card__actions">
-                    <button class="vehicle-card__button--edit">Edit</button>
-                    <button class="vehicle-card__button--cancel"><img src="lixeira-de-reciclagem.png" alt=""></button>
-            </div>
-        </div>
 
-         <div class="block-card">
-            <div class="vehicle-card">
-                <div class="vehicle-card__main" >
-                    <h2>Bmw M5</h2>
-                    <img class="vehicle-card__img" src="bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
-                    <h2>$160.000</h2>
-                </div>
-
-                <div class="vehicle-card__details">
-                    <p>Condition: New</p>
-                    <p>Year: 2025</p>
-                    <p>Km: 0000</p>
-                </div>
-
-            </div>
-            <div class="vehicle-card__actions">
-                    <button class="vehicle-card__button--edit">Edit</button>
-                    <button class="vehicle-card__button--cancel"><img src="lixeira-de-reciclagem.png" alt=""></button>
+            <div class="vehicle-registration__actions">
+                    <button class="vehicle-registration__button--edit">Edit</button>
+                    <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png" alt=""></button>
             </div>
         </div>
 
-         <div class="block-card">
-            <div class="vehicle-card">
-                <div class="vehicle-card__main" >
-                    <h2>Bmw M5</h2>
-                    <img class="vehicle-card__img" src="bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
-                    <h2>$160.000</h2>
+         <div class="vehicle-registration__block-card">
+            <div class="vehicle-registration__vehicle-card">
+                <div class="vehicle-card__main-information" >
+                    <h2 class="vehicle-card__name">Bmw M5</h2>
+                    <img class="vehicle-card__img" src="./folder img/bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
+                    <h2 class="vehicle-card__price">$160.000</h2>
                 </div>
 
                 <div class="vehicle-card__details">
-                    <p>Condition: New</p>
-                    <p>Year: 2025</p>
-                    <p>Km: 0000</p>
+                    <p class="vehicle-card__condition">Condition: New</p>
+                    <p class="vehicle-card__year">Year: 2025</p>
+                    <p class="vehicle-card__km">Km: 0000</p>
                 </div>
-
             </div>
-            <div class="vehicle-card__actions">
-                    <button class="vehicle-card__button--edit">Edit</button>
-                    <button class="vehicle-card__button--cancel"><img src="lixeira-de-reciclagem.png" alt=""></button>
+
+            <div class="vehicle-registration__actions">
+                    <button class="vehicle-registration__button--edit">Edit</button>
+                    <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png" alt=""></button>
             </div>
         </div>
 
-         <div class="block-card">
-            <div class="vehicle-card">
-                <div class="vehicle-card__main" >
-                    <h2>Bmw M5</h2>
-                    <img class="vehicle-card__img" src="bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
-                    <h2>$160.000</h2>
+
+         <div class="vehicle-registration__block-card">
+            <div class="vehicle-registration__vehicle-card">
+                <div class="vehicle-card__main-information" >
+                    <h2 class="vehicle-card__name">Bmw M5</h2>
+                    <img class="vehicle-card__img" src="./folder img/bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
+                    <h2 class="vehicle-card__price">$160.000</h2>
                 </div>
 
                 <div class="vehicle-card__details">
-                    <p>Condition: New</p>
-                    <p>Year: 2025</p>
-                    <p>Km: 0000</p>
+                    <p class="vehicle-card__condition">Condition: New</p>
+                    <p class="vehicle-card__year">Year: 2025</p>
+                    <p class="vehicle-card__km">Km: 0000</p>
                 </div>
-
             </div>
-            <div class="vehicle-card__actions">
-                    <button class="vehicle-card__button--edit">Edit</button>
-                    <button class="vehicle-card__button--cancel"><img src="lixeira-de-reciclagem.png" alt=""></button>
+
+            <div class="vehicle-registration__actions">
+                    <button class="vehicle-registration__button--edit">Edit</button>
+                    <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png" alt=""></button>
             </div>
         </div>
 
-         <div class="block-card">
-            <div class="vehicle-card">
-                <div class="vehicle-card__main" >
-                    <h2>Bmw M5</h2>
-                    <img class="vehicle-card__img" src="bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
-                    <h2>$160.000</h2>
+         <div class="vehicle-registration__block-card">
+            <div class="vehicle-registration__vehicle-card">
+                <div class="vehicle-card__main-information" >
+                    <h2 class="vehicle-card__name">Bmw M5</h2>
+                    <img class="vehicle-card__img" src="./folder img/bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
+                    <h2 class="vehicle-card__price">$160.000</h2>
                 </div>
 
                 <div class="vehicle-card__details">
-                    <p>Condition: New</p>
-                    <p>Year: 2025</p>
-                    <p>Km: 0000</p>
+                    <p class="vehicle-card__condition">Condition: New</p>
+                    <p class="vehicle-card__year">Year: 2025</p>
+                    <p class="vehicle-card__km">Km: 0000</p>
+                </div>
+            </div>
+
+            <div class="vehicle-registration__actions">
+                    <button class="vehicle-registration__button--edit">Edit</button>
+                    <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png" alt=""></button>
+            </div>
+        </div>
+
+    <div class="vehicle-registration__block-card">
+            <div class="vehicle-registration__vehicle-card">
+                <div class="vehicle-card__main-information" >
+                    <h2 class="vehicle-card__name">Bmw M5</h2>
+                    <img class="vehicle-card__img" src="./folder img/bmw-m5-2024-1.webp" width="280px" height="171px" alt="bmw-m5-2024-1">
+                    <h2 class="vehicle-card__price">$160.000</h2>
                 </div>
 
+                <div class="vehicle-card__details">
+                    <p class="vehicle-card__condition">Condition: New</p>
+                    <p class="vehicle-card__year">Year: 2025</p>
+                    <p class="vehicle-card__km">Km: 0000</p>
+                </div>
             </div>
-            <div class="vehicle-card__actions">
-                    <button class="vehicle-card__button--edit">Edit</button>
-                    <button class="vehicle-card__button--cancel"><img src="lixeira-de-reciclagem.png" alt=""></button>
+
+            <div class="vehicle-registration__actions">
+                    <button class="vehicle-registration__button--edit">Edit</button>
+                    <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png" alt=""></button>
             </div>
         </div>
 
@@ -133,5 +178,7 @@
         <button class="user-controller__button--new-car">New Car</button>
     </section>
     
+
+    <script src="script.js"></script>
 </body>
 </html>

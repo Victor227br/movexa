@@ -11,6 +11,10 @@ p{
     margin: 0;
 }
 
+button{ 
+    border-style: none;
+}
+
 @media (max-width: 600px){
     .header{
         display: flex;
@@ -21,7 +25,7 @@ p{
         height: 67px;
     }
 
-    .logo{
+    .header__logo{
         color: white;
         font-size: 32px;
     }
@@ -35,7 +39,7 @@ p{
         margin-bottom: 20vw;
     }
 
-    .vehicle-registration__title--button{
+    .vehicle-registration__top-wrapper{
         display: flex;
         justify-content: center;
         width: 100%;
@@ -46,11 +50,11 @@ p{
         font-family: "Lexend", sans-serif;
     }
 
-    .button__new-car{
+    .vehicle-registration__button--new-car{
         display: none;
     }
 
-    .block-card{
+    .vehicle-registration__block-card{
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -59,7 +63,7 @@ p{
         padding: 0;
     }
 
-    .vehicle-card{
+    .vehicle-registration__vehicle-card{
         display: flex;
         flex-direction: column;
         width: 332px;
@@ -71,7 +75,7 @@ p{
         margin: 0;
     }
 
-    .vehicle-card__main{
+    .vehicle-card__main-information{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -91,7 +95,7 @@ p{
         font-size: 20px;
     }
 
-    .vehicle-card__actions{
+    .vehicle-registration__actions{
         margin-top: 4vw;
         margin-bottom: 8vw;
         gap: 4vw;
@@ -99,7 +103,7 @@ p{
         flex-direction: row;
     }
 
-    .vehicle-card__button--edit{
+    .vehicle-registration__button--edit{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -112,7 +116,7 @@ p{
         color: white;
     }
 
-    .vehicle-card__button--cancel{
+    .vehicle-registration__button--cancel{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -160,7 +164,7 @@ p{
         height: 9vw;
     }
 
-    .logo{
+    .header__logo{
         color: white;
         font-size: 4vw;
     }
@@ -176,7 +180,7 @@ p{
         gap: 4vw;
     }
 
-    .vehicle-registration__title--button{
+    .vehicle-registration__top-wrapper{
         display: flex;
         justify-content: center;
         width: 100%;
@@ -187,11 +191,11 @@ p{
         font-family: "Lexend", sans-serif;
     }
 
-     .button__new-car{
+     .vehicle-registration__button--new-car{
         display: none;
     }
 
-    .block-card{
+    .vehicle-registration__block-card{
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -200,7 +204,7 @@ p{
         padding: 0;
     }
 
-    .vehicle-card{
+    .vehicle-registration__vehicle-card{
         display: flex;
         flex-direction: column;
         background-color: #242426;
@@ -215,7 +219,7 @@ p{
         width: 32vw;
     }
 
-    .vehicle-card__main{
+    .vehicle-card__main-information{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -235,7 +239,7 @@ p{
         font-size: 2.5vw;
     }
 
-    .vehicle-card__actions{
+    .vehicle-registration__actions{
         margin-top: 2vw;
         margin-bottom: 3vw;
         gap: 2vw;
@@ -243,7 +247,7 @@ p{
         flex-direction: row;
     }
 
-    .vehicle-card__button--edit{
+    .vehicle-registration__button--edit{
         width: 26vw;
         font-size: 4vw;
         background-color: #212DA2;
@@ -254,7 +258,7 @@ p{
         color: white;
     }
 
-   .vehicle-card__button--cancel{
+   .vehicle-registration__button--cancel{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -301,7 +305,7 @@ p{
         height: 4vw;
     }
 
-    .logo{
+    .header__logo{
         color: white;
         font-size: 2vw;
     }
@@ -316,7 +320,7 @@ p{
         flex-direction: row;
     }
 
-    .vehicle-registration__title--button{
+    .vehicle-registration__top-wrapper{
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -325,7 +329,7 @@ p{
         font-family: "Lexend", sans-serif;
     }
 
-    .button__new-car{
+    .vehicle-registration__button--new-car{
         display: show;
         display: flex;
         align-items: center;
@@ -339,12 +343,11 @@ p{
         background-color: #212DA2;
     }
 
-    .vehicle-registration__title--button{
+    .vehicle-registration__text{
         font-size: 16px;
-        font-family: "Lexend", sans-serif;
     }
 
-    .block-card{
+    .vehicle-registration__block-card{
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -353,7 +356,7 @@ p{
         padding: 0;
     }
 
-    .vehicle-card{
+    .vehicle-registration__vehicle-card{
         display: flex;
         flex-direction: column;
         background-color: #242426;
@@ -369,7 +372,7 @@ p{
         height: 8vw;
     }
 
-    .vehicle-card__main{
+    .vehicle-card__main-information{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -389,7 +392,7 @@ p{
         font-size: 14px;
     }
 
-    .vehicle-card__actions{
+    .vehicle-registration__actions{
         display: flex;
         width: 100%;
         justify-content: space-between;
@@ -399,7 +402,7 @@ p{
         flex-direction: row;
     }
 
-    .vehicle-card__button--edit{
+    .vehicle-registration__button--edit{
         width: 12vw;
         font-size: 24px;
         background-color: #212DA2;
@@ -409,7 +412,7 @@ p{
         color: white;
     }
 
-   .vehicle-card__button--cancel{
+    .vehicle-registration__button--cancel{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -422,9 +425,69 @@ p{
 
     .user-controller{
         display: none;
-
     }
 
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;     
+        left: 0;
+         width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6); /* fundo escuro */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+}
+
+    .modal__content {
+        width: 80%;
+        height: 82%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        overflow-y: auto;
+        position: relative;
+}
+    .modal__close {
+        position: absolute;
+        top: 10px; right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+}
+
+    .modal__title {
+        margin: 0 0 1rem 0;
+        font-size: 24px;
+}
+
+    .modal__form-group {
+        margin-bottom: 1rem;
+}
+
+    .modal__label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.4rem;
+}
+
+    .modal__input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+}
+
+    .modal__submit {
+        width: 100%;
+        padding: 0.7rem;
+        background-color: #2a2e37;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+}
 }
 
 
