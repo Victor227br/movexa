@@ -1,100 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,200;1,14..32,200&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
-    <title>Movexa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,200;1,14..32,200&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
+  <title>Movexa</title>
 </head>
+
 <body>
-    <header class="header">
-        <h1 class="header__logo">Movexa</h1>
-    </header>
+  <header class="header">
+    <h1 class="header__logo">Movexa</h1>
+  </header>
 
-    <section class="vehicle-registration">
-        <div class="vehicle-registration__top-wrapper">
-            <h2 class="vehicle-registration__text">Vehicle Registration</h2>
-            <button class="vehicle-registration__button--new-car">New Car</button>
+  <section class="vehicle-registration">
+    <div class="vehicle-registration__top-wrapper">
+      <h2 class="vehicle-registration__text">Vehicle Registration</h2>
+      <button class="vehicle-registration__button--new-car">New Car</button>
+    </div>
+
+    <div class="vehicle-registration__modal" id="modal">
+      <div class="vehicle-registration__modal-content">
+        <span class="vehicle-registration__modal--close" id="closeModalBtn">&times;</span>
+        <h2 class="vehicle-registration__modal-title">New Vehicle Registration</h2>
+
+        <form class="vehicle-registration__form" id="vehicleForm">
+          <div class="vehicle-registration__form-group">
+            <label class="vehicle-registration__label" for="name">Car Name</label>
+            <input class="vehicle-registration__input" type="text" id="name" name="name" required>
+          </div>
+
+          <div class="vehicle-registration__form-group">
+            <label class="vehicle-registration__label" for="price">Price</label>
+            <input class="vehicle-registration__input" type="text" id="price" name="price" required>
+          </div>
+
+          <div class="vehicle-registration__form-group">
+            <label class="vehicle-registration__label" for="year">Year</label>
+            <input class="vehicle-registration__input" type="number" id="year" name="year" required>
+          </div>
+
+          <div class="vehicle-registration__form-group">
+            <label class="vehicle-registration__label" for="km">Km</label>
+            <input class="vehicle-registration__input" type="text" id="km" name="km" required>
+          </div>
+
+          <div class="vehicle-registration__form-group">
+            <label class="vehicle-registration__label" for="condition">Condition</label>
+            <select class="vehicle-registration__input" id="condition" name="condition">
+              <option value="New">Novo</option>
+              <option value="Used">Usado</option>
+            </select>
+          </div>
+
+          <div class="vehicle-registration__form-group">
+            <label class="vehicle-registration__label" for="img">Imagem (URL)</label>
+            <input class="vehicle-registration__input" type="text" id="img" name="img">
+          </div>
+
+          <button onclick="salvar()" class="vehicle-registration__modal-submit" type="submit">Salvar</button>
+        </form>
+      </div>
+    </div>
+    <template class="vehicle-registration__template">
+      <div class="vehicle-registration__block-card">
+        <div class="vehicle-registration__vehicle-card">
+          <div class="vehicle-registration__main-information">
+            <h2 class="vehicle-registration__name"></h2>
+            <img class="vehicle-registration__img" src="">
+            <h2 class="vehicle-registration__price"></h2>
+          </div>
+
+          <div class="vehicle-registration__details">
+            <p class="vehicle-registration__condition"></p>
+            <p class="vehicle-registration__year"></p>
+            <p class="vehicle-registration__km"></p>
+          </div>
         </div>
-
-<div class="modal" id="modal">
-  <div class="modal__content">
-    <span class="modal__close" id="closeModalBtn">&times;</span>
-        <h2 class="modal__title">New Vehicle Registration</h2>
-
-    <form class="modal__form" id="vehicleForm">
-      <div class="modal__form-group">
-        <label class="modal__label" for="name">Car Name</label>
-        <input class="modal__input" type="text" id="name" name="name" required>
+        <div class="vehicle-registration__actions">
+          <button class="vehicle-registration__button--edit">Edit</button>
+          <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png"
+              alt=""></button>
+        </div>
       </div>
-
-      <div class="modal__form-group">
-        <label class="modal__label" for="price">Price</label>
-        <input class="modal__input" type="text" id="price" name="price" required>
-      </div>
-
-      <div class="modal__form-group">
-        <label class="modal__label" for="year">Year</label>
-        <input class="modal__input" type="number" id="year" name="year" required>
-      </div>
-
-      <div class="modal__form-group">
-        <label class="modal__label" for="km">Km</label>
-        <input class="modal__input" type="text" id="km" name="km" required>
-      </div>
-
-      <div class="modal__form-group">
-        <label class="modal__label" for="condition">Condition</label>
-        <select class="modal__input" id="condition" name="condition">
-          <option value="New">Novo</option>
-          <option value="Used">Usado</option>
-        </select>
-      </div>
-
-      <div class="modal__form-group">
-        <label class="modal__label" for="img">Imagem (URL)</label>
-        <input class="modal__input" type="text" id="img" name="img">
-      </div>
-
-      <button onclick="salvar()" class="modal__submit" type="submit">Salvar</button>
-    </form>
-  </div>
-</div>
-        <template class="vehicle-registration__block-card">
-            <div class="vehicle-registration__vehicle-card">
-                <div class="vehicle-card__main-information" >
-                    <h2 class="vehicle-card__name"></h2>
-                    <img class="vehicle-card__img" src="">
-                    <h2 class="vehicle-card__price"></h2>
-                </div>
-
-                <div class="vehicle-card__details">
-                    <p class="vehicle-card__condition"></p>
-                    <p class="vehicle-card__year"></p>
-                    <p class="vehicle-card__km"></p>
-                </div>
-            </div>
-
-            <div class="vehicle-registration__actions">
-                    <button class="vehicle-registration__button--edit">Edit</button>
-                    <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png" alt=""></button>
-            </div>
-        </template>
+    </template>
 
 
     <section class="user-controller">
-        <button class="user-controller__button--new-car">New Car</button>
+      <button class="user-controller__button--new-car">New Car</button>
     </section>
-    
+  </section>
 
-    <script src="script.js"></script>
+
+
+  <script src="script.js"></script>
 </body>
+
 </html>

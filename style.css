@@ -16,7 +16,7 @@ button{
 }
 
 @media (max-width: 600px){
-    .header{
+    zz.header{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -75,7 +75,7 @@ button{
         margin: 0;
     }
 
-    .vehicle-card__main-information{
+    .vehicle-registration__main-information{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -85,7 +85,7 @@ button{
         font-size: 20px;
     }
 
-    .vehicle-card__details{
+    .vehicle-registration__details{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -215,11 +215,11 @@ button{
         width: 36vw;
     }
 
-    .vehicle-card__img{
+    .vehicle-registration__img{
         width: 32vw;
     }
 
-    .vehicle-card__main-information{
+    .vehicle-registration__main-information{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -229,7 +229,7 @@ button{
         font-size: 2vw;
     }
 
-    .vehicle-card__details{
+    .vehicle-registration__details{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -372,7 +372,7 @@ button{
         height: 8vw;
     }
 
-    .vehicle-card__main-information{
+    .vehicle-registration__main-information{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -382,7 +382,7 @@ button{
         font-size: 12px;
     }
 
-    .vehicle-card__details{
+    .vehicle-registration__details{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -400,7 +400,7 @@ button{
         margin-bottom: 2vw;
         display: flex;
         flex-direction: row;
-    }
+}
 
     .vehicle-registration__button--edit{
         width: 12vw;
@@ -410,7 +410,7 @@ button{
         height: 2.5vw;
         border: 0000;
         color: white;
-    }
+}
 
     .vehicle-registration__button--cancel{
         display: flex;
@@ -421,13 +421,14 @@ button{
         border: 0000;
         background-color: #E91C1C;
         border-radius: 5px;
-    }
+        cursor: pointer;
+}
 
     .user-controller{
         display: none;
     }
 
-    .modal {
+    .vehicle-registration__modal {
         display: none;
         position: fixed;
         top: 0;     
@@ -440,7 +441,7 @@ button{
         z-index: 1000;
 }
 
-    .modal__content {
+    .vehicle-registration__modal-content {
         width: 80%;
         height: 82%;
         background-color: white;
@@ -449,36 +450,36 @@ button{
         overflow-y: auto;
         position: relative;
 }
-    .modal__close {
+    .vehicle-registration__modal--close {
         position: absolute;
         top: 10px; right: 15px;
         font-size: 24px;
         cursor: pointer;
 }
 
-    .modal__title {
+    .vehicle-registration__modal-title {
         margin: 0 0 1rem 0;
         font-size: 24px;
 }
 
-    .modal__form-group {
+    .vehicle-registration__form-group {
         margin-bottom: 1rem;
 }
 
-    .modal__label {
+    .vehicle-registration__label {
         display: block;
         font-weight: bold;
         margin-bottom: 0.4rem;
 }
 
-    .modal__input {
+    .vehicle-registration__input {
         width: 100%;
         padding: 0.5rem;
         border: 1px solid #ccc;
         border-radius: 4px;
 }
 
-    .modal__submit {
+    .vehicle-registration__modal-submit {
         width: 100%;
         padding: 0.7rem;
         background-color: #2a2e37;
