@@ -5,6 +5,7 @@
   const card = clone.querySelector('.vehicle-registration__block-card')
   card.id = `${dataCar.id}`;
   let id = card.id
+  console.log(card)
   clone.querySelector('.vehicle-registration__name').textContent = dataCar.name;
   clone.querySelector('.vehicle-registration__img').src = dataCar.imgSrc;
   clone.querySelector('.vehicle-registration__price').textContent = dataCar.price;
@@ -13,48 +14,43 @@
   clone.querySelector('.vehicle-registration__km').textContent = `Km: ${dataCar.km}`;
   const buttonDelete = clone.querySelector('.vehicle-registration__button--cancel')
   buttonDelete.id = id
-  buttonDelete.addEventListener('onclick',function criaFuncao(id) {
-    return `deleteCar(${id})`;
+  buttonDelete.addEventListener('click',function criaFuncao(id) {
+    return deleteCar(dataCar.id);
 })
-
-    vehicleRegistration.appendChild(clone);
-    console.log(id, "id")
-   console.log(buttonDelete, "buttonDeleteID")
+  vehicleRegistration.appendChild(clone);
     return id
 }
 
-function salvar() {
- let carros = JSON.parse(localStorage.getItem("carros")) ? JSON.parse(localStorage.getItem("carros")) : []
-    let resposta = {
-   id: carros.length + 1,
+function save() {
+ let cars = JSON.parse(localStorage.getItem("cars")) ? JSON.parse(localStorage.getItem("cars")) : []
+  let answer = {
+   id: cars.length + 1,
    name: document.getElementById("name").value,
    price: document.getElementById("price").value,
    year: document.getElementById("year").value,
    km: document.getElementById("km").value,
    condition: document.getElementById("condition").value,
    imgSrc: document.getElementById("img").value
-
  }
- carros.push(resposta);
- localStorage.setItem("carros", JSON.stringify(carros));
+ cars.push(answer);
+ localStorage.setItem("cars", JSON.stringify(cars));
 }
 
 function showElements(){
-  let carros = JSON.parse(localStorage.getItem("carros")) || []
-  for (const dataCar of carros) {
+  let cars = JSON.parse(localStorage.getItem("cars")) || []
+  for (const dataCar of cars) {
   createElements(dataCar)
  }
 }
 showElements()
 
-  function deleteCar(id) {
-  let carroID = id
-  let carros = JSON.parse(localStorage.getItem("carros")) || [];
-  let novosCarros = carros.filter(id => id.id !== carroID);
-  console.log(novosCarros, "novosCarros")  
-  console.log(carroID, "carro")
+function deleteCar(id) {
+  let carID = id
+  let cars = JSON.parse(localStorage.getItem("cars")) || [];
+  let newCars = cars.filter(car => car.id !== carID)
+  localStorage.setItem("cars", JSON.stringify(newCars))
+   window.location.reload()
 }
-
   const modal = document.getElementById("modal");
   const openBtn = document.querySelector(".vehicle-registration__button--new-car");  
   const closeBtn = document.getElementById("closeModalBtn");
