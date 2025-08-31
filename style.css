@@ -371,9 +371,9 @@ button{
         background-color: #f8f9fa ;
         font-family: "Inter", sans-serif;
         margin: 0;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
         height: 24vw;
-        border-radius: 8px;
+        border-radius: 5px;
         width: 238px;
     }
 

@@ -17,8 +17,23 @@
   buttonDelete.addEventListener('click',function criaFuncao(id) {
     return deleteCar(dataCar.id);
 })
+  const buttonEdit = clone.querySelector('.vehicle-registration__button--edit')
+  buttonEdit.addEventListener('click',function criaFuncao(id) {
+    modal.style.display = "flex";
+    document.getElementById('name').value = dataCar.name,
+    document.getElementById("price").value = dataCar.price,
+    document.getElementById("year").value = `${dataCar.year}`
+    document.getElementById("km").value = `${dataCar.km}`;
+    document.getElementById("condition").value = `${dataCar.condition}`;
+    document.getElementById("img").value = dataCar.imgSrc
+
+    let buttonSave = document.querySelector(".vehicle-registration__modal-submit")
+    buttonSave.innerHTML = "Editar"
+    buttonSave.onclick = function (){
+      return editCar(dataCar.id)
+}
+})
   vehicleRegistration.appendChild(clone);
-    return id
 }
 
 function save() {
@@ -42,12 +57,30 @@ function showElements(){
   createElements(dataCar)
  }
 }
+
 showElements()
 
+ function editCar(id){               
+  let carsEdit = JSON.parse(localStorage.getItem("cars")) || []   
+  let novosCarros = carsEdit.find(car => car.id == id) 
+    if (novosCarros) {
+    novosCarros.id,
+    novosCarros.name = document.getElementById("name").value
+    novosCarros.price = document.getElementById("price").value
+    novosCarros.year = document.getElementById("year").value
+    novosCarros.km = document.getElementById("km").value
+    novosCarros.condition = document.getElementById("condition").value
+    novosCarros.img = document.getElementById("img").value
+}   
+
+  console.log(novosCarros, "novosCarros")
+  console.log(carsEdit , "carsEdit")
+  localStorage.setItem("cars", JSON.stringify(carsEdit));
+}
+
 function deleteCar(id) {
-  let carID = id
-  let cars = JSON.parse(localStorage.getItem("cars")) || [];
-  let newCars = cars.filter(car => car.id !== carID)
+  let cars = JSON.parse(localStorage.getItem("cars")) || []
+  let newCars = cars.filter(car => car.id !== id)
   localStorage.setItem("cars", JSON.stringify(newCars))
    window.location.reload()
 }
@@ -57,6 +90,17 @@ function deleteCar(id) {
 
 openBtn.addEventListener("click", () => {
   modal.style.display = "flex";
+  let buttonSave = document.querySelector(".vehicle-registration__modal-submit")
+    buttonSave.onclick = function (){
+      save()
+}
+   buttonSave.innerHTML = "salvar"
+    document.getElementById('name').value = ""
+    document.getElementById("price").value = "" 
+    document.getElementById("year").value = ""
+    document.getElementById("km").value = ""
+    document.getElementById("condition").value = ""
+    document.getElementById("img").value = ""
 });
 
 closeBtn.addEventListener("click", () => {
