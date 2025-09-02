@@ -5,7 +5,6 @@
   const card = clone.querySelector('.vehicle-registration__block-card')
   card.id = `${dataCar.id}`;
   let id = card.id
-  console.log(card)
   clone.querySelector('.vehicle-registration__name').textContent = dataCar.name;
   clone.querySelector('.vehicle-registration__img').src = dataCar.imgSrc;
   clone.querySelector('.vehicle-registration__price').textContent = dataCar.price;
@@ -19,18 +18,18 @@
 })
   const buttonEdit = clone.querySelector('.vehicle-registration__button--edit')
   buttonEdit.addEventListener('click',function criaFuncao(id) {
-    modal.style.display = "flex";
-    document.getElementById('name').value = dataCar.name,
-    document.getElementById("price").value = dataCar.price,
-    document.getElementById("year").value = `${dataCar.year}`
-    document.getElementById("km").value = `${dataCar.km}`;
-    document.getElementById("condition").value = `${dataCar.condition}`;
-    document.getElementById("img").value = dataCar.imgSrc
+  modal.style.display = "flex";
+  document.getElementById('name').value = dataCar.name,
+  document.getElementById("price").value = dataCar.price,
+  document.getElementById("year").value = `${dataCar.year}`
+  document.getElementById("km").value = `${dataCar.km}`;
+  document.getElementById("condition").value = `${dataCar.condition}`;
+  document.getElementById("img").value = dataCar.imgSrc
 
-    let buttonSave = document.querySelector(".vehicle-registration__modal-submit")
-    buttonSave.innerHTML = "Editar"
-    buttonSave.onclick = function (){
-      return editCar(dataCar.id)
+  let buttonSave = document.querySelector(".vehicle-registration__modal-submit")
+  buttonSave.innerHTML = "Edit"
+  buttonSave.onclick = function (){
+    return editCar(dataCar.id)
 }
 })
   vehicleRegistration.appendChild(clone);
@@ -38,6 +37,18 @@
 
 function save() {
  let cars = JSON.parse(localStorage.getItem("cars")) ? JSON.parse(localStorage.getItem("cars")) : []
+
+  let name = document.getElementById("name").value.trim();
+  let price = document.getElementById("price").value.trim();
+  let year = document.getElementById("year").value.trim();
+  let km = document.getElementById("km").value.trim();
+  let condition = document.getElementById("condition").value.trim();
+  let imgValue = document.getElementById("img").value.trim();
+    if (!name || !price || !year || !km || !condition) {
+    alert("Por favor, preencha todos os campos obrigatórios.");
+   return;
+}
+
   let answer = {
    id: cars.length + 1,
    name: document.getElementById("name").value,
@@ -45,8 +56,9 @@ function save() {
    year: document.getElementById("year").value,
    km: document.getElementById("km").value,
    condition: document.getElementById("condition").value,
-   imgSrc: document.getElementById("img").value
+   imgSrc: imgValue !== "" ? imgValue : "/folder img/movexa.png"
  }
+
  cars.push(answer);
  localStorage.setItem("cars", JSON.stringify(cars));
 }
@@ -70,12 +82,12 @@ showElements()
     novosCarros.year = document.getElementById("year").value
     novosCarros.km = document.getElementById("km").value
     novosCarros.condition = document.getElementById("condition").value
-    novosCarros.img = document.getElementById("img").value
+    novosCarros.img = document.getElementById("img").value;
+    let imgValue = document.getElementById("img").value.trim();
+    novosCarros.imgSrc = imgValue !== "" ? imgValue : "/folder img/movexa.png";
 }   
 
-  console.log(novosCarros, "novosCarros")
-  console.log(carsEdit , "carsEdit")
-  localStorage.setItem("cars", JSON.stringify(carsEdit));
+localStorage.setItem("cars", JSON.stringify(carsEdit));
 }
 
 function deleteCar(id) {
@@ -85,7 +97,7 @@ function deleteCar(id) {
    window.location.reload()
 }
   const modal = document.getElementById("modal");
-  const openBtn = document.querySelector(".vehicle-registration__button--new-car");  
+  const openBtn = document.querySelector(".header__button--new-car");  
   const closeBtn = document.getElementById("closeModalBtn");
 
 openBtn.addEventListener("click", () => {
@@ -94,7 +106,7 @@ openBtn.addEventListener("click", () => {
     buttonSave.onclick = function (){
       save()
 }
-   buttonSave.innerHTML = "salvar"
+   buttonSave.innerHTML = "Save"
     document.getElementById('name').value = ""
     document.getElementById("price").value = "" 
     document.getElementById("year").value = ""
@@ -112,3 +124,23 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+
+
+const searchInput = document.getElementById('search')
+
+searchInput.addEventListener('input', (event) =>{
+    const value = formateString(event.target.value);
+    const itens = document.querySelectorAll('.vehicle-registration .vehicle-registration__vehicle-card')
+    itens.forEach(item=> {
+if(formateString(item.textContent).indexOf(value) !== -1  ){
+
+item.style.display = 'flex';
+} else {
+    item.style.display = 'none';
+  }
+}) 
+})
+
+function formateString(value){
+return value.toLowerCase().trim()
+}

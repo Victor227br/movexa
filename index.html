@@ -19,12 +19,15 @@
 <body>
   <header class="header">
     <h1 class="header__logo">Movexa</h1>
+      <div class="header__button--new-car">
+      <img class="header__icon-more" src="folder img/icons8-soma-50.png" alt="">  
+      </div>
   </header>
 
   <section class="vehicle-registration">
     <div class="vehicle-registration__top-wrapper">
       <h2 class="vehicle-registration__text">Vehicle Registration</h2>
-      <button class="vehicle-registration__button--new-car">New Car</button>
+      <input type="text" name="Procurar Carro" id="search" class="vehicle-registration__search-car" value="Search Vehicle">
     </div>
 
     <div class="vehicle-registration__modal" id="modal">
@@ -34,7 +37,7 @@
 
         <form class="vehicle-registration__form" id="vehicleForm">
           <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="name">Car Name</label>
+            <label class="vehicle-registration__label" for="name">Model</label>
             <input class="vehicle-registration__input" type="text" id="name" name="name" required>
           </div>
 
@@ -56,13 +59,13 @@
           <div class="vehicle-registration__form-group">
             <label class="vehicle-registration__label" for="condition">Condition</label>
             <select class="vehicle-registration__input" id="condition" name="condition">
-              <option value="New">Novo</option>
-              <option value="Used">Usado</option>
+              <option value="New">New</option>
+              <option value="Used">Used</option>
             </select>
           </div>
 
           <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="img">Imagem (URL)</label>
+            <label class="vehicle-registration__label" for="img">Image (URL)</label>
             <input class="vehicle-registration__input" type="text" id="img" name="img">
           </div>
 
@@ -73,9 +76,10 @@
     <template class="vehicle-registration__template">
       <div class="vehicle-registration__block-card">
         <div class="vehicle-registration__vehicle-card">
+      
           <div class="vehicle-registration__main-information">
             <h2 class="vehicle-registration__name"></h2>
-            <img class="vehicle-registration__img" src="">
+            <img class="vehicle-registration__img" src="/folder img/movexa.png">
             <h2 class="vehicle-registration__price"></h2>
           </div>
 
@@ -84,19 +88,14 @@
             <p class="vehicle-registration__year"></p>
             <p class="vehicle-registration__km"></p>
           </div>
-        </div>
-        <div class="vehicle-registration__actions">
-          <button class="vehicle-registration__button--edit">Edit</button>
-          <button class="vehicle-registration__button--cancel"><img src="./folder img/lixeira-de-reciclagem.png"
-              alt=""></button>
+              <div class="vehicle-registration__actions">
+              <img class="vehicle-registration__button--edit" src="/folder img/icons8-lápis-32.png" alt="">
+              <img class="vehicle-registration__button--cancel" src="/folder img/trash-red-32.png" alt="">
+          </div>
+
         </div>
       </div>
     </template>
-
-
-    <section class="user-controller">
-      <button class="user-controller__button--new-car">New Car</button>
-    </section>
   </section>
 
   <script src="script.js"></script>
