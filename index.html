@@ -9,94 +9,126 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,200;1,14..32,200&display=swap"
+  link href ="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&family=Nunito:wght@400;600&display=swap"
     rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
+   <Link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap">
+
   <title>Movexa</title>
 </head>
 
 <body>
   <header class="header">
     <h1 class="header__logo">Movexa</h1>
-      <div class="header__button--new-car">
-      <img class="header__icon-more" src="folder img/icons8-soma-50.png" alt="">  
-      </div>
+    <div class="header__menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
   </header>
-
   <section class="vehicle-registration">
     <div class="vehicle-registration__top-wrapper">
-      <h2 class="vehicle-registration__text">Vehicle Registration</h2>
-      <input type="text" name="Procurar Carro" id="search" class="vehicle-registration__search-car" value="Search Vehicle">
+      <div class="vehicle-registration__align-top">
+        <h2 class="vehicle-registration__title">Welcome</h2>
+      </div>
+      <div class="vehicle-registration__align-text">
+        <p class="vehicle-registration__text">At Movexa, we are committed to providing a trusted and transparent experience in vehicle selection. Each available vehicle in our catalog has been carefully listed with accurate details, ensuring that you have all the information needed to make the right decision. Our goal is to combine reliability, quality, and convenience, so that every choice reflects confidence and value.</p>
+                    <div class="vehicle-registration__line"></div>
+      </div>
+
+      <div class="vehicle-registration__subtitle-search">
+        <h2 class="vehicle-registration__subtitle"> <span>Available</span>Vehicle</h2>
+        <div class="vehicle-registration__search-car" >   
+          <img class="vehicle-registration__icon-search" src="/folder img/icons8-pesquisar-30.png" alt="">
+          <input type="text" name="Procurar Carro" id="search" placeholder ="Search Vehicle">           
+        </div>
+            <button class="vehicle-registration__new-vehicle">New</button>
+      </div>
     </div>
 
-    <div class="vehicle-registration__modal" id="modal">
-      <div class="vehicle-registration__modal-content">
-        <span class="vehicle-registration__modal--close" id="closeModalBtn">&times;</span>
-        <h2 class="vehicle-registration__modal-title">New Vehicle Registration</h2>
-
-        <form class="vehicle-registration__form" id="vehicleForm">
-          <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="name">Model</label>
-            <input class="vehicle-registration__input" type="text" id="name" name="name" required>
-          </div>
-
-          <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="price">Price</label>
-            <input class="vehicle-registration__input" type="text" id="price" name="price" required>
-          </div>
-
-          <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="year">Year</label>
-            <input class="vehicle-registration__input" type="number" id="year" name="year" required>
-          </div>
-
-          <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="km">Km</label>
-            <input class="vehicle-registration__input" type="text" id="km" name="km" required>
-          </div>
-
-          <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="condition">Condition</label>
-            <select class="vehicle-registration__input" id="condition" name="condition">
-              <option value="New">New</option>
-              <option value="Used">Used</option>
-            </select>
-          </div>
-
-          <div class="vehicle-registration__form-group">
-            <label class="vehicle-registration__label" for="img">Image (URL)</label>
-            <input class="vehicle-registration__input" type="text" id="img" name="img">
-          </div>
-
-          <button class="vehicle-registration__modal-submit" type="submit">Salvar</button>
-        </form>
-      </div>
+ 
     </div>
     <template class="vehicle-registration__template">
       <div class="vehicle-registration__block-card">
         <div class="vehicle-registration__vehicle-card">
-      
+              <div class="vehicle-registration__actions">
+                <div class="vehicle-registration__actions-style" >
+                  <img class="vehicle-registration__button--edit" src="/folder img/icons8-editar-48.png" alt="">
+                  <img class="vehicle-registration__button--cancel" src="/folder img/trash-red-32.png" alt="">
+                </div>
+            </div>
           <div class="vehicle-registration__main-information">
-            <h2 class="vehicle-registration__name"></h2>
             <img class="vehicle-registration__img" src="/folder img/movexa.png">
-            <h2 class="vehicle-registration__price"></h2>
           </div>
-
+            <div class="vehicle-registration__align-name">
+              <h2 class="vehicle-registration__name"></h2>
+            </div>          
           <div class="vehicle-registration__details">
             <p class="vehicle-registration__condition"></p>
             <p class="vehicle-registration__year"></p>
             <p class="vehicle-registration__km"></p>
           </div>
-              <div class="vehicle-registration__actions">
-              <img class="vehicle-registration__button--edit" src="/folder img/icons8-lápis-32.png" alt="">
-              <img class="vehicle-registration__button--cancel" src="/folder img/trash-red-32.png" alt="">
+           <div class="vehicle-registration__line-card"></div>
+          <div class="vehicle-registration__align-price" >
+            <h2 class="vehicle-registration__price"></h2>
           </div>
-
         </div>
       </div>
     </template>
   </section>
+  
+    <section class="user-controller">
+      <button class="user-controller__button--new-car">New</button>
+    </section>
+
+       <div class="modal" id="modal">
+      <div class="modal__content">
+        <span class="modal__btn--close" id="closeModalBtn">&times;</span>
+        <h2 class="modal__title">New Vehicle Registration</h2>
+
+        <form class="modal__form" id="vehicleForm">
+          <div class="modal__form-group">
+            <label class="modal__label" for="name">Model</label>
+            <input class="modal__input" type="text" id="name" name="name" placeholder="Model vehicle" required>
+          </div>
+
+          <div class="modal__form-group">
+            <label class="modal__label" for="price">Price</label>
+            <input class="modal__input" type="text" id="price" name="price" placeholder="Price" required>
+          </div>
+
+          <div class="modal__form-group">
+            <label class="modal__label" for="year">Year</label>
+            <input class="modal__input" type="text" id="year" name="year" placeholder="Year" required>
+          </div>
+
+          <div class="modal__form-group">
+            <label class="modal__label" for="km">Km</label>
+            <input class="modal__input" type="text" id="km" name="km" placeholder="Km" required>
+          </div>
+
+          <div class="modal__form-group">
+            <label class="modal__label" for="condition">Condition</label>
+            <select class="modal__input" id="condition" name="condition">
+              <option value="New">New</option>
+              <option value="Used">Used</option>
+            </select>
+          </div>
+
+          <div class="modal__form-group">
+            <label class="modal__label" for="img">Image (URL)</label>
+            <input class="modal__input" type="text" id="img" name="img" placeholder="Img URL">
+          </div>
+
+          <button class="modal__submit" type="submit">Salvar</button>
+        </form>
+      </div>
 
   <script src="script.js"></script>
 </body>

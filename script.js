@@ -7,7 +7,7 @@
   let id = card.id
   clone.querySelector('.vehicle-registration__name').textContent = dataCar.name;
   clone.querySelector('.vehicle-registration__img').src = dataCar.imgSrc;
-  clone.querySelector('.vehicle-registration__price').textContent = dataCar.price;
+  clone.querySelector('.vehicle-registration__price').textContent = `$ ${dataCar.price}`;
   clone.querySelector('.vehicle-registration__condition').textContent = `Condition: ${dataCar.condition}`;
   clone.querySelector('.vehicle-registration__year').textContent = `Year: ${dataCar.year}`;
   clone.querySelector('.vehicle-registration__km').textContent = `Km: ${dataCar.km}`;
@@ -97,12 +97,28 @@ function deleteCar(id) {
    window.location.reload()
 }
   const modal = document.getElementById("modal");
-  const openBtn = document.querySelector(".header__button--new-car");  
+  const openBtn = document.querySelector(".vehicle-registration__new-vehicle");  
+  const openBtnPhone = document.querySelector(".user-controller__button--new-car")
   const closeBtn = document.getElementById("closeModalBtn");
 
 openBtn.addEventListener("click", () => {
   modal.style.display = "flex";
-  let buttonSave = document.querySelector(".vehicle-registration__modal-submit")
+  let buttonSave = document.querySelector(".modal__submit")
+    buttonSave.onclick = function (){
+      save()
+}
+   buttonSave.innerHTML = "Save"
+    document.getElementById('name').value = ""
+    document.getElementById("price").value = "" 
+    document.getElementById("year").value = ""
+    document.getElementById("km").value = ""
+    document.getElementById("condition").value = ""
+    document.getElementById("img").value = ""
+});
+
+openBtnPhone.addEventListener("click", () => {
+  modal.style.display = "flex";
+  let buttonSave = document.querySelector(".modal__submit")
     buttonSave.onclick = function (){
       save()
 }
@@ -127,7 +143,6 @@ window.addEventListener("click", (e) => {
 
 
 const searchInput = document.getElementById('search')
-
 searchInput.addEventListener('input', (event) =>{
     const value = formateString(event.target.value);
     const itens = document.querySelectorAll('.vehicle-registration .vehicle-registration__vehicle-card')
