@@ -1,0 +1,225 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F9F7F3;
+    color: #2C2C2C;
+  font-family: "Source Sans 3", sans-serif;
+
+
+}
+
+button{
+    border-style: none;
+}
+
+span{
+    margin: 0;
+}
+
+@media (max-width: 500px){
+
+.header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    background-color:  #333333 ; 
+}
+
+.header__logo{
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.container{
+    margin-right: 6vw;
+    margin-left: 6vw;
+}
+
+.client-management{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 8%;
+}
+
+.client-management__icon{
+    height: 8vw;
+
+}
+
+.client-management__title--align{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    margin-right: 7px;
+    align-items: center;
+    gap: 2.8vw;
+    flex-direction: row;
+    font-size: 4vw;
+}
+
+.client-management__text--align{
+    font-size: 17px;
+    margin: 0;
+    margin-left: 10px;
+    width: 88vw;
+}
+
+.client-management__line{
+    width: 100%;
+    border: 1px solid #b8b8b8;
+}
+
+.client-management__search{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    align-items: center;
+}
+
+.client-management__subtitle{
+    font-size: 23px ;
+}
+
+.client-management__search-client{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5vw;
+    border-radius: 5px;
+    height: 5.2vh;
+    width: 89vw;
+    background-color: #cacaca;
+    color: #212529;
+}
+
+.client-management__search-client input{
+    background-color: #cacaca;
+    border: none;
+    width: 69vw;
+    font-family: "Source Sans 3", sans-serif;
+    border-radius: 8px;
+    height: 3.8vh;
+    font-size: 20px;
+    color: #272626;
+}
+
+.client-management__search-client input::placeholder{
+    color: #535353;
+}
+
+.client-management__button--new-client{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Source Sans 3", sans-serif;
+    height: 5.4vh;
+    width: 100%;
+    background-color:  #e19a31;
+    color: #F9F7F3;
+    border-radius: 5px;
+    font-size: 4.8vw;
+    margin-bottom: 14px;
+    margin-top: 10px;
+}
+
+.client-registration{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    margin-top: 9%;
+    margin-bottom: 9%;
+}
+
+.client-registration__block-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    color: #2C2C2C;
+    border-radius: 2px;
+    height: 2%;
+    border: 1px solid #a7a7a7;
+    width: 100%;
+}
+
+.client-registration__info-top{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5vw;
+    justify-content: space-between;
+}
+
+.client-registration__name{
+    font-size: 17px;
+}
+
+.client-registration__info-status{
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-registration__status-ring--active{
+    display: flex;
+    height: 10px;
+    align-self:center;
+    width: 10px;
+    background-color: #43f151;
+    border-radius: 50px;
+}
+
+.client-registration__status-text{
+    font-size: 15px;
+}
+
+.client-registration__button--edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.1vh;
+    width: 18vw;
+    font-family: "Source Code Pro", monospace;
+    border: 1px solid #e19a31;
+    border-radius: 5px;
+    font-size: 14px;
+    font-size: bold 300;
+    background-color: #F9F7F3;
+    transition: background-color 0.3s ease; 
+    transition: color 0.3s ease;
+    color: #e19a31;
+}
+
+.client-registration__button--edit:active{
+    color: white;
+    background-color: #e19a31;
+
+}
+
+.client-registration__button--more-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 48px;
+     background-color: #F9F7F3; 
+}
+
+.client-registration__icon-below{
+    height: 3vh;
+}
+
+.client-registration__buttons{
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    flex-direction: row;
+}
+}

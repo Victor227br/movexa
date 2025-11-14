@@ -7,15 +7,17 @@
   let id = card.id
   clone.querySelector('.vehicle-registration__name').textContent = dataCar.name;
   clone.querySelector('.vehicle-registration__img').src = dataCar.imgSrc;
-  clone.querySelector('.vehicle-registration__price').textContent = `$ ${dataCar.price}`;
+  clone.querySelector('.vehicle-registration__price').textContent = dataCar.price;
   clone.querySelector('.vehicle-registration__condition').textContent = `Condition: ${dataCar.condition}`;
   clone.querySelector('.vehicle-registration__year').textContent = `Year: ${dataCar.year}`;
   clone.querySelector('.vehicle-registration__km').textContent = `Km: ${dataCar.km}`;
+
   const buttonDelete = clone.querySelector('.vehicle-registration__button--cancel')
   buttonDelete.id = id
   buttonDelete.addEventListener('click',function criaFuncao(id) {
     return deleteCar(dataCar.id);
 })
+
   const buttonEdit = clone.querySelector('.vehicle-registration__button--edit')
   buttonEdit.addEventListener('click',function criaFuncao(id) {
   modal.style.display = "flex";
@@ -83,8 +85,6 @@ showElements()
     novosCarros.km = document.getElementById("km").value
     novosCarros.condition = document.getElementById("condition").value
     novosCarros.img = document.getElementById("img").value;
-    let imgValue = document.getElementById("img").value.trim();
-    novosCarros.imgSrc = imgValue !== "" ? imgValue : "/folder img/movexa.png";
 }   
 
 localStorage.setItem("cars", JSON.stringify(carsEdit));
@@ -140,7 +140,6 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
-
 
 const searchInput = document.getElementById('search')
 searchInput.addEventListener('input', (event) =>{
