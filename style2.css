@@ -3,9 +3,7 @@ body{
     padding: 0;
     background-color: #F9F7F3;
     color: #2C2C2C;
-  font-family: "Source Sans 3", sans-serif;
-
-
+    font-family: "Source Sans 3", sans-serif;
 }
 
 button{
@@ -32,8 +30,8 @@ span{
 }
 
 .container{
-    margin-right: 6vw;
-    margin-left: 6vw;
+    margin-right: 4vw;
+    margin-left: 4vw;
 }
 
 .client-management{
@@ -46,7 +44,6 @@ span{
 
 .client-management__icon{
     height: 8vw;
-
 }
 
 .client-management__title--align{
@@ -93,7 +90,7 @@ span{
     gap: 3.5vw;
     border-radius: 5px;
     height: 5.2vh;
-    width: 89vw;
+    width: 100%;
     background-color: #cacaca;
     color: #212529;
 }
@@ -103,7 +100,7 @@ span{
     border: none;
     width: 69vw;
     font-family: "Source Sans 3", sans-serif;
-    border-radius: 8px;
+    border-radius: 5px;
     height: 3.8vh;
     font-size: 20px;
     color: #272626;
@@ -120,13 +117,19 @@ span{
     font-family: "Source Sans 3", sans-serif;
     height: 5.4vh;
     width: 100%;
-    background-color:  #e19a31;
+    background-color:  #F0A500;
     color: #F9F7F3;
     border-radius: 5px;
+    transition: background-color 0.3s ease; 
     font-size: 4.8vw;
     margin-bottom: 14px;
     margin-top: 10px;
 }
+
+.client-management__button--new-client:active{
+    background-color: #d89a3e;
+}
+
 
 .client-registration{
     display: flex;
@@ -138,14 +141,24 @@ span{
 
 .client-registration__block-card{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
+    flex-direction: column;
     color: #2C2C2C;
     border-radius: 2px;
+    margin: 0;
+    padding: 0;
     height: 2%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     border: 1px solid #a7a7a7;
     width: 100%;
+}
+
+.client-registration__itens--align{
+    display: flex;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .client-registration__info-top{
@@ -157,7 +170,7 @@ span{
 }
 
 .client-registration__name{
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .client-registration__info-status{
@@ -184,13 +197,13 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 3.1vh;
-    width: 18vw;
+    height: 3.2vh;
+    width: 16vw;
     font-family: "Source Code Pro", monospace;
     border: 1px solid #e19a31;
-    border-radius: 5px;
+    border-radius: 2px;
     font-size: 14px;
-    font-size: bold 300;
+    /* font-size: bold 300; */
     background-color: #F9F7F3;
     transition: background-color 0.3s ease; 
     transition: color 0.3s ease;
@@ -200,7 +213,6 @@ span{
 .client-registration__button--edit:active{
     color: white;
     background-color: #e19a31;
-
 }
 
 .client-registration__button--more-info{
@@ -214,6 +226,11 @@ span{
 
 .client-registration__icon-below{
     height: 3vh;
+    transition: transform 0.3s ease;
+}
+
+.client-registration__block-card.open .client-registration__icon-below {
+    transform: rotate(180deg) scale(1.3);
 }
 
 .client-registration__buttons{
@@ -221,5 +238,64 @@ span{
     align-items: center;
     gap: 1.5vw;
     flex-direction: row;
+
 }
+
+.client-registration__extra-info {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 8px;
+    font-size: 14px;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    border-top: 0 solid #8a8a8a;
+}
+
+.client-registration__extra-info.active {
+    max-height: 470px; 
+    padding: 2px 2px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.client-registration__extra-info--align{
+    display: flex;
+    align-items: center;
+    font-family: "Source Sans 3", sans-serif;
+    flex-wrap: wrap;
+    margin: 5vw;
+}
+
+.client-registration__personal-information{
+    margin-bottom: 5px;
+}
+
+.client-registration__type-info{
+    font-weight:700;
+}
+
+.client-registration__type-info span {
+    font-weight: 400; 
+    margin-left: 4px;
+    font-size: 15px;
+}
+
+.client-registration__contact-client{
+    display: flex;
+    width: 100%;
+    border-top: 2px solid #e19a31;  
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.client-registration__contact-client--align{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.client-registration__personal-information{
+    margin-bottom: 2px;
+}
+
 }
