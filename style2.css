@@ -14,8 +14,6 @@ span{
     margin: 0;
 }
 
-@media (max-width: 500px){
-
 .header{
     display: flex;
     justify-content: center;
@@ -55,13 +53,6 @@ span{
     gap: 2.8vw;
     flex-direction: row;
     font-size: 4vw;
-}
-
-.client-management__text--align{
-    font-size: 17px;
-    margin: 0;
-    margin-left: 10px;
-    width: 88vw;
 }
 
 .client-management__line{
@@ -130,7 +121,6 @@ span{
     background-color: #d89a3e;
 }
 
-
 .client-registration{
     display: flex;
     flex-direction: column;
@@ -165,11 +155,13 @@ span{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
     gap: 5vw;
     justify-content: space-between;
 }
 
 .client-registration__name{
+    width: 28vw;
     font-size: 18px;
 }
 
@@ -203,7 +195,6 @@ span{
     border: 1px solid #e19a31;
     border-radius: 2px;
     font-size: 14px;
-    /* font-size: bold 300; */
     background-color: #F9F7F3;
     transition: background-color 0.3s ease; 
     transition: color 0.3s ease;
@@ -238,7 +229,6 @@ span{
     align-items: center;
     gap: 1.5vw;
     flex-direction: row;
-
 }
 
 .client-registration__extra-info {
@@ -290,12 +280,100 @@ span{
 
 .client-registration__contact-client--align{
     display: flex;
+    margin-top: 1vw;
     flex-direction: column;
     gap: 2vw;
 }
 
 .client-registration__personal-information{
-    margin-bottom: 2px;
+    margin-bottom: 1vw;
+}
+
+
+@media (min-width: 550px) {
+
+.header__logo{
+    font-size: 38px;
+}
+
+.client-management__title--align{
+    font-size: 30px ;
+}
+
+.client-management__icon{
+    height: 60px;
+}
+
+.client-management__search-client{
+ gap: 2vw;
+}
+
+.client-management__search-client input{
+    font-size: 32px;
+    width: 85%;
+}
+
+.client-management__icon-search{
+    height: 38px;
+}
+
+.client-registration{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.client-registration__block-card{
+    height: 7vh;
+}
+.client-registration__name{
+    font-size: 25px;
+}
+
+.client-registration__info-status{
+    gap: 1vw;
+}
+
+
+.client-registration__status-ring--active{
+    height: 15px;
+    width: 15px;
+}
+
+.client-registration__status-text{
+    font-size: 22px;
+}
+
+.client-registration__button--edit{
+    font-size: 20px;
+}
+
+.client-registration__button--more-info{
+    height: 60px;
+    width: 80px;
+}
+}
+
+@media( min-width: 1024px ){
+
+.header{
+    height: 10vh;
+}
+
+.header__logo{
+    font-size: 30px;
+}
+
+.client-management{
+    margin-top: 2%;
+}
+
+.client-management__icon{
+    height: 36px;
+}
+
+.client-management__title--align{
+    font-size: 18px;
+    gap: 1vw;
 }
 
 }
