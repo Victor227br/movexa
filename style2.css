@@ -61,8 +61,6 @@ span{
 }
 
 .client-management__control{
-
-
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
@@ -117,10 +115,15 @@ span{
     font-size: 4.8vw;
     margin-bottom: 14px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .client-management__button--new-client:active{
     background-color: #d89a3e;
+}
+
+.client-management__control--align{
+    width: 100%;
 }
 
 .client-registration{
@@ -167,6 +170,7 @@ span{
     font-size: 18px;
 }
 
+
 .client-registration__contact-top{
     display: none;
 }
@@ -178,13 +182,25 @@ span{
     align-items: center;
 }
 
-.client-registration__status-ring--active{
+.client-registration__status-ring{
     display: flex;
     height: 10px;
     align-self:center;
     width: 10px;
-    background-color: #43f151;
     border-radius: 50px;
+}
+
+.client-registration__ring--active{
+    background-color: #43f151;
+
+}
+
+.client-registration__ring--inactive{
+    background-color: #a1a1a1;
+}
+
+.client-registration__ring--disabled{
+    background-color: red;
 }
 
 .client-registration__status-text{
@@ -202,9 +218,10 @@ span{
     border-radius: 2px;
     font-size: 14px;
     background-color: #F9F7F3;
-    transition: background-color 0.3s ease; 
-    transition: color 0.3s ease;
+    transition: background-color 0.4s ease; 
+    transition: color 0.4s ease;
     color: #e19a31;
+    cursor: pointer;
 }
 
 .client-registration__button--edit:active{
@@ -295,6 +312,108 @@ span{
     margin-bottom: 1vw;
 }
 
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.modal__content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px 35px;
+  border-radius: 14px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.modal__button--close{
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s ease;
+}
+
+.modal__button--close {
+  color: #000;
+}
+
+.modal__title {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #202020;
+}
+
+.modal__form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.modal__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.modal__input {
+  padding: 12px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.modal__input:focus {
+  border-color: #ff9800;
+}
+
+.modal__select {
+  padding: 12px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.modal__select:focus {
+  border-color:  #ff9800;
+}
+
+.modal__button--save-form {
+  width: 100%;
+  background: #ff9800;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.25s ease;
+}
+
+.modal__submit:hover {
+  background: #ffa723;
+}
+
 
 @media (min-width: 550px) {
 
@@ -342,7 +461,7 @@ span{
     gap: 1vw;
 }
 
-.client-registration__status-ring--active{
+.client-registration__status-ring{
     height: 1.5vw;
     width: 1.5vw;
 }
@@ -367,7 +486,6 @@ span{
     display: flex;
     flex-direction: column;
 }
-
 }
 
 @media( min-width: 1025px ){
@@ -401,7 +519,6 @@ span{
     padding: 0;
     justify-content: space-between;
     flex-direction: row;
-
 }
 
 .client-management__button--new-client{
@@ -449,14 +566,14 @@ span{
 
 .client-registration__name{
     font-size: 24px;
-    width: auto;
+    width: 19vw;
 }
 
 .client-registration__contact-top{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 13px;
+    font-size: 15px;
     color: #505050;
     align-items: center;
     gap: 2px;
@@ -470,8 +587,7 @@ span{
 .client-registration__button--edit{
     width: 8vw;
     border-radius: 3px;
-    height: 4.5vh;
-    
+    height: 4.5vh;  
 }
 
 .client-registration__button--edit:hover{
@@ -488,7 +604,7 @@ span{
     display: none;
 }
 
-.client-registration__status-ring--active{
+.client-registration__status-ring{
     width: 10px;
     height: 10px;
 }
@@ -496,5 +612,4 @@ span{
 .client-registration__status-text{
     font-size: 18px;
 }
-
 }
