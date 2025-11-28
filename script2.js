@@ -11,19 +11,23 @@ function createElements(dataClient) {
   clone.querySelector('.client-registration__number-phone-client--extra').textContent = dataClient.phone;
   clone.querySelector('.client-registration__status-text').textContent = dataClient.status;
   const statusRing = clone.querySelector('.client-registration__status-ring');
+  
+  let buttonDeleteUser = clone.querySelector('.client-registration__button--delete-client')
+  buttonDeleteUser.addEventListener('click', () =>{
+    return deleteClient(dataClient.id)
+  })
 
-    let buttonEdit = clone.querySelector('.client-registration__button--edit')
+  let buttonEdit = clone.querySelector('.client-registration__button--edit')
     buttonEdit.addEventListener('click', () => {
       modal.style.display = "flex"
-        document.getElementById('name').value = dataClient.name;
-        document.getElementById('email').value = dataClient.email;
-        document.getElementById('phone').value = dataClient.phone;
-        document.getElementById('status').value = dataClient.status;
-  
+      document.getElementById('name').value = dataClient.name;
+      document.getElementById('email').value = dataClient.email;
+      document.getElementById('phone').value = dataClient.phone;
+      document.getElementById('status').value = dataClient.status;
         let buttonSave = document.querySelector(".modal__button--save-form");
-        buttonSave.innerHTML = "Editar usuario";
-        buttonSave.onclick = function (){
-          return editClient(dataClient.id);
+          buttonSave.innerHTML = "Editar usuario";
+          buttonSave.onclick = function (){
+            return editClient(dataClient.id);
     };
   })
 
@@ -54,16 +58,16 @@ changeStatus(statusRing, dataClient.status)
       let email = document.getElementById("email").value.trim();
       let phone = document.getElementById("phone").value.trim();
       let status = document.getElementById("status").value.trim();
-       if (!name || !email || !phone || !status) {
+       if (!name || !email || !phone || ! status) {
         alert("Por favor, preencha todos os campos obrigatórios.");
         return;
 }
-        let userData = {
-          id: clients.length + 1,
-          name,
-          email,
-          phone,
-          status,
+      let userData = {
+        id: clients.length + 1,
+        name,
+        email,
+        phone,
+        status,
   }
     clients.push(userData)
     localStorage.setItem("clients-movexa", JSON.stringify(clients))
@@ -80,8 +84,8 @@ changeStatus(statusRing, dataClient.status)
   showElements()
 
   function editClient(id){
-   let userEdit = JSON.parse(localStorage.getItem("clients-movexa")) 
-   let newDataClient = userEdit.find(user => user.id == id)
+  const savedData = JSON.parse(localStorage.getItem("clients-movexa")) 
+   let newDataClient = savedData.find(user => user.id == id)
     if(newDataClient){
       newDataClient.id
       newDataClient.name = document.getElementById("name").value
@@ -89,7 +93,21 @@ changeStatus(statusRing, dataClient.status)
       newDataClient.phone = document.getElementById("phone").value
       newDataClient.status = document.getElementById("status").value
   }
-    localStorage.setItem("clients-movexa", JSON.stringify(userEdit))
+  localStorage.setItem("clients-movexa", JSON.stringify(savedData))
+  location.reload();
+}
+
+  function deleteClient(id){
+    console.log(id, "id")
+    const savedData = JSON.parse(localStorage.getItem("clients-movexa"))
+    let userDeleted = savedData.filter(user => user.id !== id)
+    const dataUpdate = JSON.stringify(userDeleted)
+    localStorage.setItem("clients-movexa", dataUpdate)
+    location.reload();
+}
+
+  function deleteAllClients(){
+    localStorage.removeItem('clients-movexa') 
     location.reload();
   }
 
@@ -99,7 +117,7 @@ changeStatus(statusRing, dataClient.status)
 
   openModal.addEventListener('click',() => {
     modal.style.display = "flex";
-     document.getElementById('name').value = "";
+      document.getElementById('name').value = "";
       document.getElementById('email').value = "";
       document.getElementById('phone').value = ""
       document.getElementById('status').value = "";

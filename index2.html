@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movexa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movexa</title>
      <link rel="stylesheet" href="style2.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,16 +27,19 @@
         <h2 class="client-management__title">Painel de clientes</h2>
       </div>
       <div class="client-management__line"></div>
- 
+
       <div class="client-management__control">
         <div class="client-management__control--align" >
         <div class="client-management__search-client" >   
           <img class="client-management__icon-search" src="/folder img/icone-lupa.png" alt="">
           <input type="text" name="Procurar cliente" id="search" placeholder ="Buscar cliente">           
         </div>
+          <div class="client-management--align-buttons">
+            <button onclick="deleteAllClients()" class="client-management__button--delete">Excluir clientes</button>
             <button class="client-management__button--new-client">Novo cliente</button>
             </div>
-               <div class="client-management__line"></div>
+          </div>
+        <div class="client-management__line"></div>
         </div> 
 </section>
 
@@ -56,10 +59,10 @@
             </div>
         </div>
           <div class="client-registration__buttons">
-            <button class="client-registration__button--edit">Editar</button>
-            <button class="client-registration__button--more-info"> 
-              <img class="client-registration__icon-below" src="folder img/icons8-abaixo-24.png" alt="">
-             </button>
+              <button class="client-registration__button--edit-mobile"><img class="icon-edit" src="folder img/icons8-editar-30.png" alt=""></button>
+              <button class="client-registration__button--edit">Editar</button>
+              <button class="client-registration__button--delete-client"><img class="icon-trash" src="folder img/icons8-lixeira-24.png" alt=""></button>
+              <button class="client-registration__button--more-info"><img class="client-registration__icon-below" src="folder img/icons8-abaixo-24.png" alt=""></button>
           </div>
       </div>
           <div class="client-registration__extra-info"> 
@@ -74,7 +77,7 @@
             </div>
           </div>    
     </div>
-</template>
+  </template>
 </section>
 
   <section class="modal">
@@ -84,17 +87,18 @@
 
     <div class="modal__form">
       <div class="modal__form-group">
+        <label class="modal__label">Name</label>
         <input class="modal__input" type="text" id="name" placeholder="Your name">
       </div>
 
       <div class="modal__form-group">
         <label class="modal__label">Email</label>
-        <input class="modal__input" type="text" id="email" placeholder="email">
+        <input class="modal__input" type="text" id="email" placeholder="Your favorite email">
       </div>
 
       <div class="modal__form-group">
         <label class="modal__label" for="number-phone">Number phone</label>
-        <input class="modal__input" type="text" id="phone" placeholder="number-phone">
+        <input class="modal__input" type="text" id="phone" placeholder="phone number">
       </div>
 
       <div class="modal__form-group">
