@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #F9F7F3;
@@ -122,21 +122,6 @@ span{
     background-color: #d89a3e;
 }
 
-.client-management__button--delete{
-    display: flex;
-    justify-content: center;
-    height: 5.4vh;
-    width: 100%;
-    font-size: 4.8vw;
-    font-family: "Source Sans 3", sans-serif;
-    align-items: center;
-    border-radius: 2px;
-    background-color: rgb(235, 62, 62);
-    color: white;
-    transition: background-color 0.3s ease; 
-    cursor: pointer;
-}
-
 .client-management__button--delete:active{
     background-color: white;
     color: red;
@@ -147,12 +132,6 @@ span{
     flex-direction: column;
     gap: 12px;
     width: 100%;
-}
-
-.client-management--align-buttons{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 }
 
 .client-registration{
@@ -208,7 +187,6 @@ span{
 .client-registration__info-status{
     display: flex;
     gap: 4px;
-    width: 22.2vw;
     justify-content: center;
     align-items: center;
 }
@@ -223,7 +201,6 @@ span{
 
 .client-registration__ring--active{
     background-color: #43f151;
-
 }
 
 .client-registration__ring--inactive{
@@ -242,7 +219,7 @@ span{
     display: none
 }
 
-.client-registration__button--edit--mobile{
+.client-registration__button--edit-mobile{
     display: flex;
     height: 26px;
     align-items: center;
@@ -437,6 +414,71 @@ span{
   background: #ffa723;
 }
 
+.modal-confirm-delete {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.modal-confirm-delete__content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  padding: 28px 32px;
+  border-radius: 7px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.modal-confirm-delete__button--close {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s ease;
+}
+
+.modal-confirm-delete__button--close:hover {
+  color: #000;
+}
+
+.modal-confirm-delete__text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #202020;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.modal-confirm-delete__button--delete {
+  width: 100%;
+  background: red;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal-confirm-delete__elements--align {
+    margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 @media (min-width: 550px) {
 
@@ -485,8 +527,8 @@ span{
 }
 
 .client-registration__status-ring{
-    height: 1.5vw;
-    width: 1.5vw;
+    height: 20px;
+    width: 20px;
 }
 
 .client-registration__status-text{
@@ -544,37 +586,24 @@ span{
     flex-direction: row;
 }
 
-.client-management--align-buttons{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
-    gap: 46px;
-}
-
 .client-management__button--new-client{
-    width: 14vw;
-    height: 6vh;
+    width: 15%;
+    height: 36px;
+    font-size: 22px;
     margin: 0;
-    font-size: 22px;
-}
 
-.client-management__button--delete{
-    width: 14vw;
-    height: 6vh;
-    font-size: 22px;
 }
 
 .client-management__search-client{
     gap: 5px;
-    height: 6vh;
-    width: 32vw;
+    height: 36px;
+    width: 30%;
     border-radius: 4px;
 }
 
 .client-management__search-client input{
     font-size: 22px;
-    height: 5vh;
+    height: 76%;
 }
 
 .client-management__icon-search{
@@ -591,20 +620,21 @@ span{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 40px;
+
     justify-content: space-between;
 }
 
 .client-registration__info-top{
     display: flex;
+    flex-wrap: wrap;
     margin-left: 4vw;
     width: 60vw;
     justify-content: space-between;
 }
 
 .client-registration__name{
-    font-size: 24px;
-    width: 16.5vw;
+    font-size: 22px;
+    width: 28%;
 }
 
 .client-registration__contact-top{
@@ -618,23 +648,25 @@ span{
 }
 
 .client-registration__info-status{
-    width: 120px;
+    width: 18%;
 }
 
 .client-registration__buttons{
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
     width: 20%;
 }
 
 .client-registration__button--edit{
-    width: 8vw;
+    width: 40%;
     border-radius: 3px;
     height: 4.5vh;  
 }
 
 .icon-trash{
-    height: 25px;
+    height: 24px;
 }
 
 .client-registration__button--edit{
@@ -644,7 +676,7 @@ span{
     font-family: "Source Code Pro", monospace;
     border: 1px solid #e19a31;
     border-radius: 2px;
-    font-size: 14px;
+    font-size: 16px;
     background-color: #F9F7F3;
     transition: background-color 0.4s ease; 
     transition: color 0.4s ease;
@@ -652,7 +684,7 @@ span{
     cursor: pointer;
 }
 
-.client-registration__button--edit--mobile{
+.client-registration__button--edit-mobile{
     display: none;
 }
 
@@ -685,6 +717,10 @@ span{
 }
 
 .modal{
+    width: 100%;
+}
+
+.modal-confirm-delete{
     width: 100%;
 }
 

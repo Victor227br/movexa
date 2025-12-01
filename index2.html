@@ -24,7 +24,7 @@
   <section class="client-management container">
       <div class="client-management__title--align">
         <img class="client-management__icon"src="folder img/icon-user.png" alt="">
-        <h2 class="client-management__title">Painel de clientes</h2>
+        <h2 class="client-management__title">Customer panel</h2>
       </div>
       <div class="client-management__line"></div>
 
@@ -34,10 +34,7 @@
           <img class="client-management__icon-search" src="/folder img/icone-lupa.png" alt="">
           <input type="text" name="Procurar cliente" id="search" placeholder ="Buscar cliente">           
         </div>
-          <div class="client-management--align-buttons">
-            <button onclick="deleteAllClients()" class="client-management__button--delete">Excluir clientes</button>
-            <button class="client-management__button--new-client">Novo cliente</button>
-            </div>
+            <button class="client-management__button--new-client">New Client</button>
           </div>
         <div class="client-management__line"></div>
         </div> 
@@ -48,19 +45,19 @@
     <div class="client-registration__block-card">
       <div class="client-registration__itens--align">
         <div class="client-registration__info-top">
-            <p class="client-registration__name">Victor Souza</p>
+            <p class="client-registration__name"></p>
             <div class="client-registration__contact-top">
               <span class="client-registration__email-client--top"></span>
               <span class="client-registration__number-phone-client--top"></span>
             </div>
             <div class="client-registration__info-status" > 
               <span class="client-registration__status-ring"></span> 
-              <span class="client-registration__status-text">Ativo</span>
+              <span class="client-registration__status-text"></span>
             </div>
         </div>
           <div class="client-registration__buttons">
-              <button class="client-registration__button--edit-mobile"><img class="icon-edit" src="folder img/icons8-editar-30.png" alt=""></button>
-              <button class="client-registration__button--edit">Editar</button>
+              <button class="client-registration__button--edit-mobile btn-edit"><img class="icon-edit" src="folder img/icons8-editar-30.png" alt=""></button>
+              <button class="client-registration__button--edit btn-edit">Edit</button>
               <button class="client-registration__button--delete-client"><img class="icon-trash" src="folder img/icons8-lixeira-24.png" alt=""></button>
               <button class="client-registration__button--more-info"><img class="client-registration__icon-below" src="folder img/icons8-abaixo-24.png" alt=""></button>
           </div>
@@ -71,7 +68,7 @@
                   <h3> Informação de contato</h3>
                   <div class="client-registration__contact-client--align">
                     <span class="client-registration__type-info">Email :<span class="client-registration__email-client--extra"></span></span>
-                    <span class="client-registration__type-info">Número de Telefone :<span class="client-registration__number-phone-client--extra"></span></span>
+                    <span class="client-registration__type-info">Number phone :<span class="client-registration__number-phone-client--extra"></span></span>
                   </div>
               </div>
             </div>
@@ -104,14 +101,24 @@
       <div class="modal__form-group">
         <label class="modal__label">Status</label>
         <select class="modal__input" id="status">
-          <option value="Ativo">Ativo</option>
-          <option value="Inativo">Inativo</option>
-          <option value="Desativado">Desativado</option>
+          <option value="active">active</option>
+          <option value="inactive">inactive</option>
+          <option value="disabled">disabled</option>
         </select>
       </div>
-      <button onclick="saveDataClient()" type="button" class="modal__button--save-form">Salvar</button>
+      <button onclick="saveDataClient()" type="button" class="modal__button--save-form">Save</button>
     </div>
   </div>
+  </section>
+
+  <section class="modal-confirm-delete">
+    <div class="modal-confirm-delete__content">
+        <span class="modal-confirm-delete__button--close">&times;</span>
+        <div class="modal-confirm-delete__elements--align" >
+          <h2 class="modal-confirm-delete__text">Are you sure you want to delete this?</h2>
+          <button class="modal-confirm-delete__button--delete">Delete Client</button>
+        </div>
+    </div>
   </section>
 
 <script src="script2.js"></script>

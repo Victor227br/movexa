@@ -12,37 +12,42 @@ function createElements(dataClient) {
   clone.querySelector('.client-registration__status-text').textContent = dataClient.status;
   const statusRing = clone.querySelector('.client-registration__status-ring');
   
-  let buttonDeleteUser = clone.querySelector('.client-registration__button--delete-client')
-  buttonDeleteUser.addEventListener('click', () =>{
-    return deleteClient(dataClient.id)
-  })
+  let buttonModalDelete = clone.querySelector('.client-registration__button--delete-client')
+  buttonModalDelete.addEventListener('click', () =>{
+    modalConfirmDelete.style.display = "flex"
+      let buttonDeleteUser = document.querySelector(".modal-confirm-delete__button--delete")
+        buttonDeleteUser.onclick = function(){
+          return deleteClient(dataClient.id)
+      } 
+    })
 
-  let buttonEdit = clone.querySelector('.client-registration__button--edit')
-    buttonEdit.addEventListener('click', () => {
-      modal.style.display = "flex"
-      document.getElementById('name').value = dataClient.name;
-      document.getElementById('email').value = dataClient.email;
-      document.getElementById('phone').value = dataClient.phone;
-      document.getElementById('status').value = dataClient.status;
-        let buttonSave = document.querySelector(".modal__button--save-form");
-          buttonSave.innerHTML = "Editar usuario";
-          buttonSave.onclick = function (){
-            return editClient(dataClient.id);
+  document.querySelectorAll('.btn-edit').forEach(buttonEdit => {
+  buttonEdit.addEventListener('click', () => {
+    modal.style.display = "flex";
+    document.getElementById('name').value = dataClient.name;
+    document.getElementById('email').value = dataClient.email;
+    document.getElementById('phone').value = dataClient.phone;
+    document.getElementById('status').value = dataClient.status;
+      let buttonSave = document.querySelector(".modal__button--save-form");
+      buttonSave.innerHTML = "Edit Client";
+        buttonSave.onclick = function () {
+          return editClient(dataClient.id);
     };
-  })
+  });
+});
 
 function changeStatus(element, status){
   element.classList.remove('client-registration__ring--active','client-registration__ring--inactive','client-registration__ring--disabled');
   switch(status){
-    case "Ativo": 
+    case "active": 
       element.classList.add('client-registration__ring--active');
     break;
 
-    case "Inativo":
+    case "inactive":
       element.classList.add('client-registration__ring--inactive');
     break;
 
-    case "Desativado":
+    case "disabled":
       element.classList.add('client-registration__ring--disabled');
     break;
   }
@@ -62,8 +67,14 @@ changeStatus(statusRing, dataClient.status)
         alert("Por favor, preencha todos os campos obrigatórios.");
         return;
 }
+    function generateRandomId(){
+      const min = 10000
+      const max = 99999
+      return Math.floor(Math.random() * (max - min + 1))
+    }
+
       let userData = {
-        id: clients.length + 1,
+        id: generateRandomId(), 
         name,
         email,
         phone,
@@ -106,12 +117,9 @@ changeStatus(statusRing, dataClient.status)
     location.reload();
 }
 
-  function deleteAllClients(){
-    localStorage.removeItem('clients-movexa') 
-    location.reload();
-  }
-
-  const  modal = document.querySelector(".modal")
+  const modal = document.querySelector(".modal")
+  const modalConfirmDelete = document.querySelector(".modal-confirm-delete")
+  const closeModalDelete = document.querySelector(".modal-confirm-delete__button--close")
   const openModal = document.querySelector(".client-management__button--new-client") 
   const closeModalBtn = document.querySelector(".modal__button--close")
 
@@ -122,7 +130,11 @@ changeStatus(statusRing, dataClient.status)
       document.getElementById('phone').value = ""
       document.getElementById('status').value = "";
         let buttonSave = document.querySelector('.modal__button--save-form')
-         buttonSave.innerHTML = "Salvar"
+         buttonSave.innerHTML = "Save"
+  })
+
+  closeModalDelete.addEventListener("click", () => {
+    modalConfirmDelete.style.display = "none"
   })
 
   closeModalBtn.addEventListener("click", () => {
