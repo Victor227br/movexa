@@ -21,8 +21,8 @@ function createElements(dataClient) {
       } 
     })
 
-  document.querySelectorAll('.btn-edit').forEach(buttonEdit => {
-  buttonEdit.addEventListener('click', () => {
+   clone.querySelectorAll('.btn-edit').forEach(buttonEdit => {
+    buttonEdit.addEventListener('click', () => {
     modal.style.display = "flex";
     document.getElementById('name').value = dataClient.name;
     document.getElementById('email').value = dataClient.email;
