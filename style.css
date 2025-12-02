@@ -175,9 +175,9 @@ span{
 }
 
 .client-registration__name{
-    margin-left: 15px;
+    margin-left: 4px;
     width: 90px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .client-registration__contact-top{
@@ -212,7 +212,7 @@ span{
 }
 
 .client-registration__status-text{
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .client-registration__button--edit{
@@ -270,7 +270,7 @@ span{
     max-height: 470px; 
     padding: 2px 2px;
     border-radius: 2px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
 }
 
@@ -307,6 +307,7 @@ span{
 .client-registration__contact-client--align{
     display: flex;
     margin-top: 1vw;
+    margin-left: 3px;
     flex-direction: column;
     gap: 2vw;
 }
@@ -526,7 +527,6 @@ span{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     height: auto;
 }
 
@@ -539,7 +539,8 @@ span{
 
 .client-registration__info-top{
     display: flex;
-    justify-content: space-between;
+    margin-left: 15px;
+    justify-content: space-around;
     width: 48%;
 }
 
@@ -564,9 +565,83 @@ span{
     cursor: pointer;
 }
 
+.client-registration__extra-info:active{
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.client-registration__extra-info--align{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: "Source Sans 3", sans-serif;
+    flex-wrap: wrap;
+    margin: 5vw;
+}
+
+.client-registration__type-info{
+    font-size: 30px;
+}
+
+.client-registration__type-info span{
+    font-size: 25px;
+}
+
+.client-registration__contact-client--align{
+    display: flex;
+    margin-top: 1vw;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.client-registration__extra-info--align{
+    display: flex;
+    align-items: center;
+    font-family: "Source Sans 3", sans-serif;
+    flex-wrap: wrap;
+    margin: 5vw;
+}
+
+.client-registration__personal-information{
+    margin-bottom: 5px;
+}
+
+.client-registration__type-info{
+    font-size: 21px;
+    font-weight:700;
+}
+
+.client-registration__type-info span {
+    font-weight: 400; 
+    margin-left: 4px;
+    font-size: 21px;
+}
+
+.client-registration__contact-client{
+    display: flex;
+    width: 100%;
+}
+
+.client-registration__contact-client h3 {
+    font-size: 25px;
+    width: 80vw;
+}
+
+
+.client-registration__personal-information{
+    margin-bottom: 1vw;
+}
+
 .client-registration__button--edit:active{
     color: #F9F7F3;
     background-color:  #F0A500;
+}
+
+.client-registration__contact-client--align{
+    justify-content: space-between;
 }
 
 .icon-trash{
