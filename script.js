@@ -68,8 +68,8 @@ changeStatus(statusRing, dataClient.status)
         return;
 }
     function generateRandomId(){
-      const min = 100000
-      const max = 999999
+      const min = 10000
+      const max = 99999
       return Math.floor(Math.random() * (max - min + 1))
     }
 
