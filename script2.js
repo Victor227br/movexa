@@ -68,8 +68,8 @@ changeStatus(statusRing, dataClient.status)
         return;
 }
     function generateRandomId(){
-      const min = 10000
-      const max = 99999
+      const min = 100000
+      const max = 999999
       return Math.floor(Math.random() * (max - min + 1))
     }
 
@@ -130,7 +130,7 @@ changeStatus(statusRing, dataClient.status)
       document.getElementById('phone').value = ""
       document.getElementById('status').value = "";
         let buttonSave = document.querySelector('.modal__button--save-form')
-         buttonSave.innerHTML = "Save"
+         buttonSave.innerHTML = "Save Client"
   })
 
   closeModalDelete.addEventListener("click", () => {
