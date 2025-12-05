@@ -175,9 +175,10 @@ span{
 }
 
 .client-registration__name{
+    text-overflow: ellipsis;
     margin-left: 4px;
     width: 90px;
-    font-size: 17px;
+    font-size: 16.5px;
 }
 
 .client-registration__contact-top{
@@ -212,7 +213,7 @@ span{
 }
 
 .client-registration__status-text{
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .client-registration__button--edit{
@@ -220,7 +221,7 @@ span{
 }
 
 .client-registration__button--edit-mobile{
-     height: 35px;
+    height: 35px;
     width: 36px;
     display: flex;
     align-items: center;
@@ -270,7 +271,6 @@ span{
     max-height: 470px; 
     padding: 2px 2px;
     border-radius: 2px;
-    /* display: flex; */
     flex-direction: column;
 }
 
@@ -288,6 +288,7 @@ span{
 
 .client-registration__type-info{
     font-weight:700;
+    font-size: 15px;
 }
 
 .client-registration__type-info span {
@@ -299,6 +300,7 @@ span{
 .client-registration__contact-client{
     display: flex;
     width: 100%;
+    font-size: 15px;
     border-top: 2px solid #e19a31;  
     flex-direction: column;
     justify-content: space-around;
@@ -550,12 +552,12 @@ span{
 
 .client-registration__button--edit{
     display: flex;
+    font-size: 19px;
     align-items: center;
     justify-content: center;
     font-family: "Source Code Pro", monospace;
     border: 1px solid #e19a31;
     border-radius: 2px;
-    font-size: 20px;
     width: 42%;
     height: 3vh;
     background-color: #F9F7F3;
@@ -630,7 +632,6 @@ span{
     width: 80vw;
 }
 
-
 .client-registration__personal-information{
     margin-bottom: 1vw;
 }
@@ -649,6 +650,7 @@ span{
 }
 
 .client-registration__button--more-info{
+    
     width: 55px;
     height: 55px;
 }
@@ -671,7 +673,7 @@ span{
 
 .client-registration__name{
     flex-wrap: wrap;
-    font-size: 23px;
+    font-size: 22px;
     width: 47%;
 }
 
@@ -687,7 +689,7 @@ span{
 }
 
 .client-registration__status-text{
-    font-size: 25px;
+    font-size: 19px;
 }
 
  .client-registration__extra-info.active {
@@ -818,7 +820,6 @@ span{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-
     justify-content: space-between;
 }
 
@@ -831,7 +832,7 @@ span{
 }
 
 .client-registration__name{
-    font-size: 22px;
+    font-size: 20px;
     width: 28%;
 }
 
@@ -839,7 +840,7 @@ span{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 15px;
+    font-size: 17px;
     color: #505050;
     align-items: center;
     gap: 2px;
@@ -861,6 +862,7 @@ span{
 
 .client-registration__button--edit{
     width: 40%;
+    font-size: 17px;
     border-radius: 2px;
     height: 4.5vh;  
 }
@@ -893,7 +895,7 @@ span{
 }
 
 .client-registration__status-text{
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .modal{
