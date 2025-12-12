@@ -24,7 +24,7 @@
   <section class="client-management container">
       <div class="client-management__title--align">
         <img class="client-management__icon"src="folder img/icon-user.png" alt="">
-        <h2 class="client-management__title">Customer panel</h2>
+        <h2 class="client-management__title">Client Registration</h2>
       </div>
       <div class="client-management__line"></div>
 
@@ -45,9 +45,12 @@
     <div class="client-registration__block-card">
       <div class="client-registration__itens--align">
         <div class="client-registration__info-top">
-            <p class="client-registration__name"></p>
+          <div class="client-registration__info-group">
+           <div class="client-registration__name--align"> <span class="client-registration__name"></span></div>
+            <span class="client-registration__email-client--top"></span>
+          </div>
             <div class="client-registration__contact-top">
-              <span class="client-registration__email-client--top"></span>
+              <span class="client-registration__date-birth--top"></span>
               <span class="client-registration__number-phone-client--top"></span>
             </div>
             <div class="client-registration__info-status" > 
@@ -64,6 +67,7 @@
       </div>
           <div class="client-registration__extra-info"> 
             <div class="client-registration__extra-info--align">
+              <span class="client-registration__type-info">Birth : <span class="client-registration__date-birth--extra"></span> </span>
               <div class="client-registration__contact-client">
                   <h3> Contact information</h3>
                   <div class="client-registration__contact-client--align">
@@ -85,25 +89,31 @@
     <div class="modal__form">
       <div class="modal__form-group">
         <label class="modal__label">Name</label>
-        <input class="modal__input" type="text" id="name" placeholder="Name">
+        <input class="modal__input" type="text" id="name" placeholder="Input name">
       </div>
 
       <div class="modal__form-group">
         <label class="modal__label">Email</label>
-        <input class="modal__input" type="text" id="email" placeholder="Email">
+        <input class="modal__input" type="text" id="email" placeholder=" Input email">
       </div>
 
       <div class="modal__form-group">
         <label class="modal__label" for="number-phone">Number phone</label>
-        <input class="modal__input" type="text" id="phone" placeholder="phone number">
+        <input class="modal__input" type="text" id="phone" placeholder="Input number phone">
       </div>
 
       <div class="modal__form-group">
-        <label class="modal__label">Status</label>
+        <label class="modal__label" for="number-phone">Date of birth</label>
+        <input class="modal__input" type="date" id="dateBirth" placeholder="Input date">
+      </div>
+
+
+      <div class="modal__form-group">
+        <label class="modal__label">Select status</label>
         <select class="modal__input" id="status">
-          <option value="active">active</option>
-          <option value="inactive">inactive</option>
-          <option value="disabled">disabled</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+          <option value="Disabled">Disabled</option>
         </select>
       </div>
       <button onclick="saveDataClient()" type="button" class="modal__button--save-form">Save Client</button>

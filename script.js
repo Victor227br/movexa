@@ -7,8 +7,11 @@ function createElements(dataClient) {
   clone.querySelector('.client-registration__name').textContent = dataClient.name;
   clone.querySelector('.client-registration__email-client--top').textContent = dataClient.email;
   clone.querySelector('.client-registration__number-phone-client--top').textContent = dataClient.phone;
-  clone.querySelector('.client-registration__email-client--extra').textContent = dataClient.email;
+  clone.querySelector('.client-registration__date-birth--top').textContent = dataClient.dateBirth;
   clone.querySelector('.client-registration__number-phone-client--extra').textContent = dataClient.phone;
+  clone.querySelector('.client-registration__email-client--extra').textContent = dataClient.email
+    clone.querySelector('.client-registration__date-birth--extra').textContent = dataClient.dateBirth;
+
   clone.querySelector('.client-registration__status-text').textContent = dataClient.status;
   const statusRing = clone.querySelector('.client-registration__status-ring');
   
@@ -27,9 +30,12 @@ function createElements(dataClient) {
     document.getElementById('name').value = dataClient.name;
     document.getElementById('email').value = dataClient.email;
     document.getElementById('phone').value = dataClient.phone;
+    document.getElementById('dateBirth').value = dataClient.dateBirth
     document.getElementById('status').value = dataClient.status;
+      let titleForm = document.querySelector('.modal__title')
+      titleForm.textContent = "Edit client"
       let buttonSave = document.querySelector(".modal__button--save-form");
-      buttonSave.innerHTML = "Edit Client";
+      buttonSave.innerHTML = "Edit";
         buttonSave.onclick = function () {
           return editClient(dataClient.id);
     };
@@ -39,15 +45,15 @@ function createElements(dataClient) {
 function changeStatus(element, status){
   element.classList.remove('client-registration__ring--active','client-registration__ring--inactive','client-registration__ring--disabled');
   switch(status){
-    case "active": 
+    case "Active": 
       element.classList.add('client-registration__ring--active');
     break;
 
-    case "inactive":
+    case "Inactive":
       element.classList.add('client-registration__ring--inactive');
     break;
 
-    case "disabled":
+    case "Disabled":
       element.classList.add('client-registration__ring--disabled');
     break;
   }
@@ -62,8 +68,9 @@ changeStatus(statusRing, dataClient.status)
       let name = document.getElementById("name").value.trim();
       let email = document.getElementById("email").value.trim();
       let phone = document.getElementById("phone").value.trim();
-      let status = document.getElementById("status").value.trim();
-       if (!name || !email || !phone || ! status) {
+      let dateBirth = document.getElementById("dateBirth").value.trim()
+       let status = document.getElementById("status").value.trim();
+       if (!name || !email || !phone || ! status || ! dateBirth) {
         alert("Por favor, preencha todos os campos obrigatórios.");
         return;
 }
@@ -78,6 +85,7 @@ changeStatus(statusRing, dataClient.status)
         name,
         email,
         phone,
+        dateBirth,
         status,
   }
     clients.push(userData)
@@ -99,10 +107,11 @@ changeStatus(statusRing, dataClient.status)
    let newDataClient = savedData.find(user => user.id == id)
     if(newDataClient){
       newDataClient.id
-      newDataClient.name = document.getElementById("name").value
-      newDataClient.email = document.getElementById("email").value
-      newDataClient.phone = document.getElementById("phone").value
-      newDataClient.status = document.getElementById("status").value
+      newDataClient.name = document.getElementById("name").value.trim()
+      newDataClient.email = document.getElementById("email").value.trim()
+      newDataClient.phone = document.getElementById("phone").value.trim()
+      newDataClient.dateBirth = document.getElementById("dateBirth").value.trim()
+      newDataClient.status = document.getElementById("status").value.trim()
   }
   localStorage.setItem("clients-movexa", JSON.stringify(savedData))
   location.reload();
@@ -127,10 +136,13 @@ changeStatus(statusRing, dataClient.status)
     modal.style.display = "flex";
       document.getElementById('name').value = "";
       document.getElementById('email').value = "";
-      document.getElementById('phone').value = ""
+      document.getElementById('phone').value = "";
+      document.getElementById("dateBirth").value = "";
       document.getElementById('status').value = "";
+      let titleForm = document.querySelector('.modal__title')
+      titleForm.textContent = "Client Registration"
         let buttonSave = document.querySelector('.modal__button--save-form')
-         buttonSave.innerHTML = "Save Client"
+         buttonSave.innerHTML = "Save"
   })
 
   closeModalDelete.addEventListener("click", () => {
