@@ -143,6 +143,7 @@ span{
     margin-bottom: 9%;
 }
 
+
 .client-registration__block-card{
     display: flex;
     flex-direction: column;
@@ -150,7 +151,6 @@ span{
     border-radius: 2px;
     margin: 0;
     padding: 0;
-    height: 2%;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     border: 1px solid #a7a7a7;
     width: 100%;
@@ -161,6 +161,8 @@ span{
     margin: 0;
     width: 100%;
     padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-items: center;
     justify-content: space-around;
 }
@@ -170,15 +172,18 @@ span{
     flex-wrap: wrap;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5vw;
+    gap: 8vw;
     justify-content: space-between;
 }
 
 .client-registration__name{
     text-overflow: ellipsis;
-    margin-left: 4px;
     width: 90px;
     font-size: 16.5px;
+}
+
+.client-registration__email-client--top{
+    display: none;
 }
 
 .client-registration__contact-top{
@@ -689,7 +694,7 @@ span{
 }
 
 .client-registration__status-text{
-    font-size: 19px;
+    font-size: 20px;
 }
 
  .client-registration__extra-info.active {
@@ -813,7 +818,7 @@ span{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 10vh;
+    height: 72px;
 }
 
 .client-registration__itens--align{
@@ -831,7 +836,29 @@ span{
     justify-content: space-between;
 }
 
+.client-registration__info-group{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.client-registration__name--align{
+    display: flex;
+    margin: 0;
+    width: 12vw;
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.client-registration__email-client--top{
+    display: flex;
+    color:#505050 ;
+}
+
 .client-registration__name{
+    text-overflow: ellipsis;
     font-size: 20px;
     width: 28%;
 }
@@ -840,10 +867,18 @@ span{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 17px;
+    font-size: 18px;
     color: #505050;
     align-items: center;
     gap: 2px;
+}
+
+.client-registration__date-birth--top{
+    color: #000;
+}
+
+.client-registration__number-phone-client--top{
+    font-size: 16px;
 }
 
 .client-registration__info-status{
@@ -895,7 +930,7 @@ span{
 }
 
 .client-registration__status-text{
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .modal{
