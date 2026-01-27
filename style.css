@@ -28,8 +28,8 @@ span{
 }
 
 .container{
-    margin-right: 4vw;
-    margin-left: 4vw;
+    margin-right: 4%;
+    margin-left: 4%;
 }
 
 .client-management{
@@ -41,7 +41,7 @@ span{
 }
 
 .client-management__icon{
-    height: 8vw;
+    height: 4.5vh;
 }
 
 .client-management__title--align{
@@ -50,9 +50,9 @@ span{
     display: flex;
     margin-right: 7px;
     align-items: center;
-    gap: 2.8vw;
+    gap: 2.8%;
     flex-direction: row;
-    font-size: 4vw;
+    font-size: 110%;
 }
 
 .client-management__line{
@@ -78,7 +78,7 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3.5vw;
+    gap: 3%;
     border-radius: 3px;
     height: 5.2vh;
     width: 100%;
@@ -89,7 +89,7 @@ span{
 .client-management__search-client input{
     background-color: #cacaca;
     border: none;
-    width: 69vw;
+    width: 82%;
     font-family: "Source Sans 3", sans-serif;
     border-radius: 3px;
     height: 3.8vh;
@@ -113,7 +113,7 @@ span{
     color: #F9F7F3;
     border-radius: 3px;
     transition: background-color 0.3s ease; 
-    font-size: 4.8vw;
+    font-size: 115%;
     margin-bottom: 14px;
     cursor: pointer;
 }
@@ -172,7 +172,7 @@ span{
     flex-wrap: wrap;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8vw;
+    gap: 32px;
     justify-content: space-between;
 }
 
@@ -202,7 +202,7 @@ span{
 
 .client-registration__info-status{
     display: flex;
-    gap: 4px;
+    gap: 5px;
     justify-content: center;
     align-items: center;
 }
@@ -236,7 +236,7 @@ span{
 }
 
 .client-registration__button--delete-client{
-     height: 35px;
+    height: 35px;
     width: 36px;
     cursor: pointer;
     background-color: #F9F7F3;
@@ -282,7 +282,7 @@ span{
     align-items: center;
     font-family: "Source Sans 3", sans-serif;
     flex-wrap: wrap;
-    margin: 5vw;
+    margin: 5%;
 }
 
 .client-registration__personal-information{
@@ -311,14 +311,14 @@ span{
 
 .client-registration__contact-client--align{
     display: flex;
-    margin-top: 1vw;
+    margin-top: 1%;
     margin-left: 3px;
     flex-direction: column;
-    gap: 2vw;
+    gap: 2%;
 }
 
 .client-registration__personal-information{
-    margin-bottom: 1vw;
+    margin-bottom: 2%;
 }
 
 .modal {
@@ -489,7 +489,6 @@ span{
   align-items: center;
 }
 
-
 @media (min-width: 750px) {
 
 .header__logo{
@@ -505,7 +504,7 @@ span{
 }
 
 .client-management__search-client{
-    gap: 2vw;
+    gap: 2%;
 }
 
 .client-management__search-client input{
@@ -547,7 +546,6 @@ span{
     overflow: hidden;
     white-space: nowrap;
 }
-
 
 .client-registration__info-top{
     display: flex;
@@ -591,7 +589,7 @@ span{
     flex-direction: row;
     font-family: "Source Sans 3", sans-serif;
     flex-wrap: wrap;
-    margin: 5vw;
+    margin: 5%;
 }
 
 .client-registration__type-info{
@@ -604,9 +602,9 @@ span{
 
 .client-registration__contact-client--align{
     display: flex;
-    margin-top: 1vw;
+    margin-top: 2%;
     flex-direction: row;
-    gap: 2vw;
+    gap: 2%;
 }
 
 .client-registration__extra-info--align{
@@ -614,7 +612,7 @@ span{
     align-items: center;
     font-family: "Source Sans 3", sans-serif;
     flex-wrap: wrap;
-    margin: 5vw;
+    margin: 5%;
 }
 
 .client-registration__personal-information{
@@ -639,11 +637,11 @@ span{
 
 .client-registration__contact-client h3 {
     font-size: 25px;
-    width: 80vw;
+    width: 80%;
 }
 
 .client-registration__personal-information{
-    margin-bottom: 1vw;
+    margin-bottom: 1%;
 }
 .client-registration__button--edit{
     font-size: 20px;
@@ -694,7 +692,7 @@ span{
 .client-registration__info-status{
     display: flex;
     align-items: center;
-    gap: 1vw;
+    gap: 10px;
 }
 
 .client-registration__status-ring{
@@ -717,10 +715,9 @@ span{
 }
 
 .client-registration__extra-info--align {
-    margin: 2vw;
+    margin: 2%;
     flex-direction: row;
 }
-
 
 .modal{
     width: 100%;
@@ -792,7 +789,7 @@ span{
 
 .client-management__title--align{
     font-size: 18px;
-    gap: 1vw;
+    gap: 1.2%;
 }
 
 .client-management__control--align{
@@ -803,6 +800,10 @@ span{
     padding: 0;
     justify-content: space-between;
     flex-direction: row;
+}
+
+.client-registration__contact-client{
+    display: none;
 }
 
 .client-management__button--new-client{
@@ -845,16 +846,15 @@ span{
 .client-registration__info-top{
     display: flex;
     flex-wrap: wrap;
-    margin-left: 4vw;
-    width: 60vw;
+    margin-left: 3%;
+    width: 63%;
     justify-content: space-between;
 }
-
 
 .client-registration__name--align{
     display: flex;
     margin: 0;
-    width: 12vw;
+    width: 63%;
     overflow: hidden;
     white-space: nowrap;
   text-overflow: ellipsis;
@@ -864,7 +864,6 @@ span{
     display: flex;
     color:#505050 ;
 }
-
 
 .client-registration__name{
     text-overflow: ellipsis;
@@ -984,9 +983,9 @@ span{
 
 .modal-confirm-delete__elements--align {
     margin-top: 34px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .modal-confirm-delete__text {
