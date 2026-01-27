@@ -10,7 +10,7 @@ function createElements(dataClient) {
   clone.querySelector('.client-registration__date-birth--top').textContent = dataClient.dateBirth;
   clone.querySelector('.client-registration__number-phone-client--extra').textContent = dataClient.phone;
   clone.querySelector('.client-registration__email-client--extra').textContent = dataClient.email
-  clone.querySelector('.client-registration__date-birth--extra').textContent = dataClient.dateBirth;
+  clone.querySelector('.client-registration__date-birth--top').textContent = formatDateUS(dataClient.dateBirth);
   clone.querySelector('.client-registration__status-text').textContent = dataClient.status;
 
   const statusRingColor = {
@@ -18,7 +18,6 @@ function createElements(dataClient) {
   Inactive: '#a1a1a1',
   Disabled: '#ff0000',
 }
-
   const statusRing = clone.querySelector('.client-registration__status-ring');
   statusRing.style.background = statusRingColor[dataClient.status]
  
@@ -30,7 +29,6 @@ function createElements(dataClient) {
           return deleteClient(dataClient.id)
       } 
     })
-
 
    clone.querySelectorAll('.btn-edit').forEach(buttonEdit => {
     buttonEdit.addEventListener('click', () => {
@@ -88,7 +86,7 @@ function createElements(dataClient) {
      for (const dataClient of clients){
       createElements(dataClient)
     }
-  }
+}
 
   showElements()
 
@@ -132,7 +130,7 @@ function createElements(dataClient) {
       let titleForm = document.querySelector('.modal__title')
       titleForm.textContent = "Client Registration"
         let buttonSave = document.querySelector('.modal__button--save-form')
-         buttonSave.innerHTML = "Save"
+         buttonSave.innerHTML = "Submit"
   })
 
   closeModalDelete.addEventListener("click", () => {
@@ -169,3 +167,9 @@ btnMoreInfo.forEach(btn => {
     extraInfo.classList.toggle('active');
   });
 });
+
+function formatDateUS(dateString) {
+  if (!dateString) return '';
+  const [year, month, day] = dateString.split('-');
+  return `${month}/${day}/${year}`;
+}
