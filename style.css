@@ -204,7 +204,7 @@ span{
     white-space: nowrap;
 }
 
-.client-registration__email-client--top{
+.client-registration__date-birth--top{
     display: none;
 }
 
@@ -902,7 +902,9 @@ span{
 }
 
 .client-registration__date-birth--top{
-    color: #000;
+    display: flex;
+    color: #505050;
+
 }
 
 .client-registration__number-phone-client--top{
