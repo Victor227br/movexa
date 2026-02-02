@@ -156,7 +156,6 @@ span{
     margin-bottom: 9%;
 }
 
-
 .client-registration__block-card{
     display: flex;
     flex-direction: column;
@@ -505,7 +504,7 @@ span{
 @media (min-width: 750px) {
 
 .header__logo{
-    font-size: 38px;
+    font-size: 270%;
 }
 
 .client-management__title--align{
@@ -516,13 +515,15 @@ span{
     height: 60px;
 }
 
-.client-management__search-client{
-    gap: 2%;
+.client-management__icon-search--align{
+    height: 4.4vh;
+    width: 8%;
 }
+
 
 .client-management__search-client input{
     font-size: 32px;
-    width: 85%;
+    width: 100%;
 }
 
 .client-management__icon-search{
@@ -599,7 +600,7 @@ span{
     width: 100%;
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     font-family: "Source Sans 3", sans-serif;
     flex-wrap: wrap;
     margin: 5%;
@@ -616,7 +617,8 @@ span{
 .client-registration__contact-client--align{
     display: flex;
     margin-top: 2%;
-    flex-direction: row;
+    width: 100vw;
+    flex-direction: column;
     gap: 2%;
 }
 
@@ -820,14 +822,31 @@ span{
 
 .client-management__button--new-client{
     width: 15%;
-    height: 36px;
-    font-size: 22px;
+    height: 5.5vh;
+    font-size: 124%;
     margin: 0;
 }
 
+.client-management__search-client{
+    margin: 0;
+    width: 40%;
+    gap: 0;
+}
+
+.client-management__search-client input{
+    margin: 0;
+    width: 90%;
+    height: 5vh;
+    font-size: 21px;
+}
+
+.client-management__icon-search--align{
+    height: 5.5vh;
+    margin: 0;
+}
 
 .client-management__icon-search{
-    height: 30px;
+    height: 28px;
 }
 
 .client-registration__block-card{
@@ -858,7 +877,7 @@ span{
     width: 63%;
     overflow: hidden;
     white-space: nowrap;
-  text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 
 .client-registration__email-client--top{
