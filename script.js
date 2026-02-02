@@ -7,10 +7,11 @@ function createElements(dataClient) {
   clone.querySelector('.client-registration__name').textContent = dataClient.name;
   clone.querySelector('.client-registration__email-client--top').textContent = dataClient.email;
   clone.querySelector('.client-registration__number-phone-client--top').textContent = dataClient.phone;
-  clone.querySelector('.client-registration__date-birth--top').textContent = dataClient.dateBirth;
+  clone.querySelector('.client-registration__date-birth--top').textContent = formatDateUS(dataClient.dateBirth);
+    clone.querySelector('.client-registration__name--extra').textContent = dataClient.name;
   clone.querySelector('.client-registration__number-phone-client--extra').textContent = dataClient.phone;
   clone.querySelector('.client-registration__email-client--extra').textContent = dataClient.email
-  clone.querySelector('.client-registration__date-birth--top').textContent = formatDateUS(dataClient.dateBirth);
+  clone.querySelector('.client-registration__date-birth--extra').textContent = formatDateUS(dataClient.dateBirth);
   clone.querySelector('.client-registration__status-text').textContent = dataClient.status;
 
   const statusRingColor = {
@@ -85,7 +86,7 @@ function createElements(dataClient) {
    let clients = JSON.parse(localStorage.getItem("clients-movexa"))  || []
      for (const dataClient of clients){
       createElements(dataClient)
-    }
+  }
 }
 
   showElements()
