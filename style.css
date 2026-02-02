@@ -18,6 +18,7 @@ span{
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 10vh;
     align-items: center;
     background-color:  #333333 ; 
 }
@@ -78,28 +79,40 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3%;
-    border-radius: 3px;
-    height: 5.2vh;
-    width: 100%;
-    background-color: #cacaca;
-    color: #212529;
+    flex-direction: row;
+    height: auto 
 }
 
 .client-management__search-client input{
-    background-color: #cacaca;
-    border: none;
-    width: 82%;
+    background-color: #F9F7F3;
+    width: 100%;
     font-family: "Source Sans 3", sans-serif;
-    border-radius: 3px;
-    height: 3.8vh;
+    border-radius: 0 3px 3px 0;
+    height: 4vh;
     font-size: 20px;
     color: #272626;
+    margin: 0;
     border: 0000;
 }
 
 .client-management__search-client input::placeholder{
+    padding: 10px;
+    box-sizing: border-box;
     color: #535353;
+}
+
+.client-management__icon-search--align{
+    width: 10%;
+    height: 4.6vh;
+    display: flex;
+    background-color: #333333;
+    border-radius: 3px 0 0 3px;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-management__icon-search{
+    height: 20px;
 }
 
 .client-management__button--new-client{
@@ -706,7 +719,6 @@ span{
 
 .client-registration__number-phone-client--extra{
     margin-right: 40px;
-
 }
 
  .client-registration__extra-info.active {
@@ -813,17 +825,6 @@ span{
     margin: 0;
 }
 
-.client-management__search-client{
-    gap: 5px;
-    height: 36px;
-    width: 30%;
-    border-radius: 4px;
-}
-
-.client-management__search-client input{
-    font-size: 22px;
-    height: 76%;
-}
 
 .client-management__icon-search{
     height: 30px;
